@@ -92,7 +92,7 @@ a {
 }
 .header__logo {
 	float: left;
-	margin-right: 250px;
+	width: 23%;
 }
 .header__logo img {
 	vertical-align: middle;
@@ -109,6 +109,8 @@ a {
 }
 .header__nav {
 	float: left;
+	width: 54%;
+	text-align: center;
 }
 .header__link {
 	font-size: 16px;
@@ -136,8 +138,11 @@ a {
 	background-image: url(../img/bg-top.jpg);
 	padding-top: 460px;
 }
+.sect-1__left {
+	width: 57%;
+	float: left;
+}
 .heading-main {
-	max-width: 850px;
 	color: #fff;
 	font-size: 60px;
 	line-height: 72px;
@@ -149,14 +154,21 @@ a {
 .heading-desc {
 	font: normal 22px/34px OpenSans, Arial, Helvetica, sans-serif;
 	color: #fff;
-	max-width: 510px;
+	max-width: 500px;
+}
+.sect-1__right {
+	width: 40%;
+	float: right;
 }
 
 
 
 
-
-
+@media only screen and (max-width: 1366px) and (min-width: 1025px) {
+	.container {
+		max-width: 1140px;
+	}
+}
 @media only screen and (max-width: 1024px) {
 	h1 {
 		font-size: 30px;
