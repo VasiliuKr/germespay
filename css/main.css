@@ -180,12 +180,12 @@ a {
 	vertical-align: top;
 	margin-bottom: 110px;
 }
-.features__item_title {
+.section-title {
 	font-size: 36px;
 	line-height: 44px;
 	font-weight: bold;
 }
-.features__item_title div {
+.features__item.section-title div {
 	width: 70%;
 }
 .features__img-wrap {
@@ -217,13 +217,86 @@ a {
 #sect-3 {
 	background-color: #f9fafc;
 }
-.sect-2__left {
+.sect-3__left {
 	float: left;
 	width: 49%;
 }
-.sect-2__right {
+.sect-3__right {
 	float: right;
 	width: 51%;
+}
+.section-desc {
+	font-size: 14px;
+	line-height: 22px;
+	color: #76889a;
+}
+.payment-block__title {
+	margin-bottom: 25px;
+}
+.payment-block__desc {
+	margin-bottom: 60px;
+}
+.points__list {
+	list-style: none;
+	width: 87%;
+}
+.points__item {
+	background-color: #fff;
+	padding: 20px;
+}
+.point__img {
+	max-width: 150px;
+}
+.point__data {
+	float: right;
+	width: 70%;
+	position: relative;
+}
+.point__title {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 22px;
+	margin-bottom: 20px;
+}
+.point__address,
+.point__shedule {
+	width: 50%;
+	padding-left: 30px;
+}
+.point__address {
+	float: left;
+}
+.point__shedule {
+	float: right;
+}
+.address__title,
+.shedule__title {
+	font-size: 13px;
+	line-height: 22px;
+	color: #76889a;
+	position: relative;
+}
+.address__title:before,
+.shedule__title:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: -28px;
+	width: 23px;
+	height: 26px;
+	background-repeat: no-repeat;
+}
+.address__title:before {
+	background-image: url(../img/location.png);
+}
+.shedule__title:before {
+	background-image: url(../img/clock.png);
+}
+.address__value,
+.shedule__value {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 22px;
 }
 
 
@@ -246,7 +319,7 @@ a {
 	.features__item {
 		margin-bottom: 90px;
 	}
-	.features__item_title {
+	.section-title {
 		font-size: 32px;
 		line-height: 36px;
 	}
@@ -256,6 +329,18 @@ a {
 	}
 	.features__topic {
 		margin-bottom: 10px;
+	}
+	.points__item {
+		padding: 14px;
+	}
+	.point__img {
+		max-width: 110px;
+	}
+	.point__data {
+		width: 72%;
+	}
+	.point__title {
+		margin-bottom: 15px;
 	}
 }
 @media only screen and (max-width: 1024px) {
