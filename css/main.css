@@ -85,6 +85,7 @@ a {
 	top: 0;
 	width: 100%;
 	transition: all 0.3s ease-in-out;
+	z-index: 100;
 }
 .header.header_white {
 	background-color: #fff;
@@ -220,6 +221,8 @@ a {
 .sect-3__left {
 	float: left;
 	width: 49%;
+	padding-top: 110px;
+	padding-bottom: 110px;
 }
 .sect-3__right {
 	float: right;
@@ -235,6 +238,7 @@ a {
 }
 .payment-block__desc {
 	margin-bottom: 60px;
+	max-width: 430px;
 }
 .points__list {
 	list-style: none;
@@ -243,6 +247,12 @@ a {
 .points__item {
 	background-color: #fff;
 	padding: 20px;
+	margin-bottom: 13px;
+	border: solid 1px #e9edf2;
+}
+.points__item:hover {
+	box-shadow: 0 1px 12px rgba(0,0,0,.12);
+	cursor: pointer;
 }
 .point__img {
 	max-width: 150px;
@@ -275,6 +285,7 @@ a {
 	line-height: 22px;
 	color: #76889a;
 	position: relative;
+	margin-bottom: 12px;
 }
 .address__title:before,
 .shedule__title:before {
@@ -282,9 +293,11 @@ a {
 	display: block;
 	position: absolute;
 	left: -28px;
+	top: -3px;
 	width: 23px;
 	height: 26px;
 	background-repeat: no-repeat;
+	background-size: contain;
 }
 .address__title:before {
 	background-image: url(../img/location.png);
@@ -341,6 +354,26 @@ a {
 	}
 	.point__title {
 		margin-bottom: 15px;
+	}
+	.point__address,
+	.point__shedule {
+		padding-left: 23px;
+	}
+	.address__title,
+	.shedule__title {
+		margin-bottom: 8px;
+	}
+	.address__title:before,
+	.shedule__title:before {
+		width: 18px;
+		left: -22px;
+		height: 20px;
+		top: 0;
+	}
+	.address__value,
+	.shedule__value {
+		font-size: 11px;
+		line-height: 16px;
 	}
 }
 @media only screen and (max-width: 1024px) {
