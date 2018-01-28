@@ -118,6 +118,22 @@ a {
 	color: #fff;
 	text-decoration: none;
 	margin-right: 75px;
+	position: relative;
+	display: inline-block;
+}
+.header__link:after {
+	position: absolute;
+	height: 2px;
+	width: 90%;
+	background-color: none;
+	content: "";
+	bottom: 23px;
+	transform: translateX(6%);
+	left: 0;
+	transition: 0.25s;
+}
+.header__link:hover:after {
+	background-color: #2095ee;
 }
 .header.header_white .header__link {
 	color: #3b4256;
@@ -227,6 +243,7 @@ a {
 .sect-3__right {
 	float: right;
 	width: 51%;
+	position: relative;
 }
 .section-desc {
 	font-size: 14px;
@@ -310,6 +327,11 @@ a {
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 22px;
+}
+.sect-3__map {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 
