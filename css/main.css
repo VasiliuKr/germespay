@@ -100,7 +100,7 @@ a {
 }
 .header__logo {
 	float: left;
-	width: 23%;
+	width: 24%;
 }
 .logo__img {
 	vertical-align: middle;
@@ -118,14 +118,14 @@ a {
 }
 .header__nav {
 	float: left;
-	width: 54%;
+	width: 52%;
 	text-align: center;
 }
 .header__link {
 	font-size: 18px;
 	color: #fff;
 	text-decoration: none;
-	margin-right: 75px;
+	margin-right: 90px;
 	position: relative;
 	display: inline-block;
 }
@@ -159,9 +159,11 @@ a {
 	color: #3b4256;
 }
 #sect-1 {
-	height: 950px;
+	height: 925px;
 	background-image: url(../img/bg-top.jpg);
-	padding-top: 460px;
+	padding-top: 430px;
+	background-position-y: -25px;
+	background-position-x: -6px; 
 }
 .sect-1__left {
 	width: 57%;
@@ -177,18 +179,95 @@ a {
 	color: #2196f3;
 }
 .heading-desc {
-	font-size: 22px;
+	font-size: 21px;
 	line-height: 34px;
 	color: #fff;
-	max-width: 500px;
+	max-width: 510px;
 }
 .sect-1__right {
 	width: 40%;
 	float: right;
 	color: #fff;
 }
+.payment-modal {
+	box-shadow: 5px 17px 40px rgba(0,0,0,.18);
+	width: 100%;
+	background-color: #fff;
+	color: #3b4256;
+	border-radius: 10px;
+	padding: 65px 70px;
+}
+.payment-modal__title {
+	font-size: 26px;
+	line-height: 34px;
+	font-weight: bold;
+	margin-bottom: 35px;
+	text-align: center;
+}
+.payment-modal__fieldset-wrap {
+	text-align: justify;
+}
+.payment-modal__fieldset-wrap:after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+.payment-modal__label_outer {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.payment-modal__fieldset {
+	display: inline-block;
+	position: relative;
+	background-color: #e7eaf1;
+	border-radius: 50em;
+	border: 1px solid #d5d9e2;
+	text-align: center;
+	vertical-align: middle;
+}
+.payment-modal__radio {
+	position: absolute;
+	opacity: 0;
+}
+.payment-modal__label {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	float: left;
+	width: 30px;
+	height: 27px;
+	line-height: 40px;
+	cursor: pointer;
+	font-size: 14px;
+	color: #ffffff;
+}
+.payment-modal__switch {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	background-color: #2196f3;
+	border-radius: 50em;
+	transition: transform 0.3s;
+}
+.payment-modal__radio:checked + label + .payment-modal__switch,
+.payment-modal__radio:checked + label:nth-of-type(n) + .payment-modal__switch {
+	transform: translateX(30px);
+}
+.payment-modal__link {
+	color: #2196f3;
+	font-size: 15px;
+	font-weight: 500;
+	text-decoration: none;
+	border-bottom: 1px dashed #2196f3;
+	padding-bottom: 5px;
+	margin-bottom: 37px;
+}
+
 #sect-2 {
-	height: 730px;
+	height: 750px;
 	padding-top: 220px;
 }
 .features__list {
@@ -201,9 +280,9 @@ a {
 }
 .features__item {
 	display: inline-block;
-	width: 33%;
+	width: 32%;
 	vertical-align: top;
-	margin-bottom: 110px;
+	margin-bottom: 122px;
 }
 .section-title {
 	font-size: 36px;
@@ -215,8 +294,8 @@ a {
 }
 .features__img-wrap {
 	float: left;
-	width: 20%;
-	padding-top: 3px;
+	width: 26%;
+	padding-top: 7px;
 }
 .features__img {
 	max-width: 85px;
@@ -226,12 +305,15 @@ a {
 	width: 70%;
 	float: left;
 	text-align: left;
+	padding-top: 5px;
+	padding-right: 25px;
 }
 .features__topic {
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: bold;
 	margin-bottom: 17px;
+	max-width: 250px;
 }
 .features__desc {
 	font-size: 14px;
@@ -245,15 +327,15 @@ a {
 .sect-3__left {
 	float: left;
 	width: 49%;
-	padding-top: 110px;
-	padding-bottom: 110px;
+	padding-top: 105px;
+	padding-bottom: 66px;
 }
 .sect-3__right {
 	float: right;
 	width: 51%;
 	position: absolute;
 	left: 49%;
-	height: 1050px;
+	height: 1070px;
 }
 .section-desc {
 	font-size: 14px;
@@ -276,6 +358,7 @@ a {
 	padding: 20px;
 	margin-bottom: 13px;
 	border: solid 1px #e9edf2;
+	position: relative;
 }
 .points__item:hover {
 	box-shadow: 0 1px 12px rgba(0,0,0,.12);
@@ -286,7 +369,8 @@ a {
 }
 .point__data {
 	float: right;
-	width: 70%;
+	width: 71%;
+	padding-top: 12px;
 	position: relative;
 }
 .point__title {
@@ -347,21 +431,27 @@ a {
 .footer__top {
 	background-color: #2f3239;
 	height: 500px;
-	padding-top: 90px;
+	padding-top: 95px;
 	padding-bottom: 70px;
 }
 .footer__left {
 	float: left;
 	width: 50%;
-	padding-right: 15%;
+	padding-right: 18%;
 }
 .footer__logo-wrap {
 	width: 100%;
-	margin-bottom: 85px;
+	margin-bottom: 65px;
 }
 .footer__logo {
 	width: 50%;
 	float: left;
+}
+.footer__logo .logo__img {
+	margin-right: 10px;
+}
+.footer__logo .logo__text {
+	font-size: 26px;
 }
 .footer__phone {
 	width: 50%;
@@ -374,7 +464,7 @@ a {
 }
 .footer__right {
 	float: right;
-	width: 50%;
+	width: 49%;
 }
 .footer__text {
 	color: #fff;
@@ -392,7 +482,7 @@ a {
 
 .pmnt__list {
 	text-align: justify;
-	margin-bottom: 12px;
+	margin-bottom: 5px;
 }
 .pmnt__list:after {
 	content: '';
@@ -427,18 +517,19 @@ a {
 	margin-top: -7px;
 }
 .web-dev {
-	right: 0;
+	right: 33px;
 }
 .web-dev:after {
 	content: '';
 	display: inline-block;
-	background-image: url(../img/kislorod.png);
+	background-image: url(../svg/Kislorod1.svg);
 	position: absolute;
-	top: -3px;
+	top: -2px;
 	right: -30px;
 	width: 23px;
 	height: 23px;
 	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 

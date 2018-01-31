@@ -35,7 +35,31 @@
 				<h1 class="heading-main">Быстрая и легкая <span>оплата счетов и квитанций жкх</span> без комиссии</h1>
 				<div class="heading-desc">Удобная оплата квитанций за одну минуту не выходя из дома</div>
 			</div>
-			<div class="sect-1__right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, reprehenderit ut aperiam consequuntur quos. Nisi odio, doloribus possimus laudantium nam sapiente animi excepturi autem suscipit minima provident, qui eveniet ut!</div>
+			<div class="sect-1__right">
+				<div class="payment-modal">
+					<div class="payment-modal__title">Оплатить счета и квитанции</div>
+					<div class="payment-modal__fieldset-wrap">
+						<label class="payment-modal__label_outer" for="address_way_payment">по адресу объекта</label>
+						<div class="payment-modal__fieldset">
+							<input class="payment-modal__radio" type="radio" name="payment" value="address_way" id="address_way_payment" checked>
+							<label class="payment-modal__label" for="address_way_payment"></label>
+							<input class="payment-modal__radio" type="radio" name="payment" value="number_way" id="number_way_payment">
+							<label class="payment-modal__label" for="number_way_payment"></label>
+							<span class="payment-modal__switch"></span>
+						</div>
+						<label class="payment-modal__label_outer" for="number_way_payment">по номеру лицевого счета</label>
+					</div>
+					<a href="#" class="payment-modal__link">Инструкция по оплате</a>
+					<form action="" id="paymentByAddress">
+						<input type="email" class="payment-modal__input">
+						<input type="text" class="payment-modal__input">
+					</form>
+					<form action="" id="paymentByAccount">
+						<input type="email" class="payment-modal__input">
+						<input type="text" class="payment-modal__input">
+					</form>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -181,16 +205,16 @@
 					</div>
 					<ul class="pmnt__list">
 						<li class="pmnt__item">
-							<img src="img/mir.png" alt="" class="pmnt__pic">
+							<img height="26" src="svg/mir.svg" alt="" class="pmnt__pic">
 						</li>
 						<li class="pmnt__item">
-							<img src="img/visa.png" alt="" class="pmnt__pic">
+							<img height="27" src="svg/Visa.svg" alt="" class="pmnt__pic">
 						</li>
 						<li class="pmnt__item">
-							<img src="img/mastercard.png" alt="" class="pmnt__pic">
+							<img height="40" src="svg/Mastercard.svg" alt="" class="pmnt__pic">
 						</li>
 						<li class="pmnt__item">
-							<img src="img/qivi.png" alt="" class="pmnt__pic">
+							<img height="60" src="svg/qiwi.svg" alt="" class="pmnt__pic">
 						</li>
 					</ul>
 					<p class="text-apply">По всем вопросам пишите на электронную почту: <a href="mailto:info@germes.ru" class="text-link">info@germes.ru</a></p>
