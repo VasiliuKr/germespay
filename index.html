@@ -56,19 +56,104 @@
 							<input type="email" class="payment-form__input" name="email" id="f-adrs-email">
 						</div>
 						<div class="payment-form__field-group">
-							<label for="f-adrs-city" class="payment-form__label">Город</label>
-							<input type="text" class="payment-form__input" name="city" id="f-adrs-city">
+							<select id="f-adrs-city">
+								<option value="hide">Город</option>
+								<option value="cheboksary">Чебоксары</option>
+								<option value="alatyr">Алатырь</option>
+								<option value="novocheboksarsk">Новочебоксарск</option>
+								<option value="yadrin">Ядрин</option>
+								<option value="lapsary">пос. Лапсары</option>
+							</select>
 						</div>
+						<div class="payment-form__field-group">
+							<select id="f-adrs-street">
+								<option value="hide">Улица</option>
+								<option value="street_1">пр. Ленина</option>
+								<option value="street_2">ул. Гагарина</option>
+								<option value="street_3">пер. Маяковского</option>
+								<option value="street_4">ул. К.Маркса</option>
+							</select>
+						</div>
+						<div class="clearfix">
+							<div class="payment-form__field-group payment-form__field-group_left">
+								<select id="f-adrs-house">
+									<option value="hide">Номер дома</option>
+									<option value="street_1">4</option>
+									<option value="street_2">9</option>
+									<option value="street_3">25</option>
+									<option value="street_4">187</option>
+								</select>
+							</div>
+							<div class="payment-form__field-group payment-form__field-group_right">
+								<label for="f-adrs-flat" class="payment-form__label">Номер квартиры</label>
+								<input type="text" class="payment-form__input" name="flat" id="f-adrs-flat">
+							</div>
+						</div>
+						<div class="payment-form__field-group">
+							<select id="f-adrs-type">
+								<option value="hide">Вид платежа</option>
+								<option value="type_1">Вид платежа 1</option>
+								<option value="type_2">Вид платежа 2</option>
+								<option value="type_3">Вид платежа 3</option>
+								<option value="type_4">Вид платежа 4</option>
+							</select>
+						</div>
+						<div class="payment-form__account-number-wrap">
+							Лицевой счет: <span class="payment-form__account-number">******1234</span>
+						</div>
+						<div class="clearfix">
+							<div class="payment-form__field-group payment-form__field-group_left">
+								<label for="f-adrs-amount" class="payment-form__label">Сумма к оплате</label>
+								<input type="text" class="payment-form__input" name="amount" id="f-adrs-amount">
+							</div>
+							<div class="payment-form__field-group payment-form__field-group_right">
+								<div class="commission-text">Размер комиссии:</div>
+								<div class="commission-value">0<span>%</span></div>
+							</div>
+						</div>
+						<button class="btn_submit">Перейти к оплате</button>
+						<p class="payment-form__agree">Нажимая на кнопку «Перейти к оплате», вы соглашаетесь с <a class="text-link" href="#">условиями оферты</a></p>
 					</form>
-					<form action="" id="paymentByAccount">
+
+					<form action="" id="paymentByAccount" style="display: none;">
 						<div class="payment-form__field-group error">
 							<label for="f-acnt-email" class="payment-form__label">E-mail</label>
 							<input type="email" class="payment-form__input" name="email" id="f-acnt-email">
 						</div>
 						<div class="payment-form__field-group">
-							<label for="f-acnt-number" class="payment-form__label">Номер лицевого счета</label>
-							<input type="text" class="payment-form__input" name="number" id="f-acnt-number">
+							<label for="f-acnt-account-num" class="payment-form__label">Номер лицевого счета</label>
+							<input type="text" class="payment-form__input" name="account-num" id="f-acnt-account-num">
 						</div>
+						<div class="payment-form__field-group">
+							<select id="f-acnt-type">
+								<option value="hide">Вид платежа</option>
+								<option value="type_1">Вид платежа 1</option>
+								<option value="type_2">Вид платежа 2</option>
+								<option value="type_3">Вид платежа 3</option>
+								<option value="type_4">Вид платежа 4</option>
+							</select>
+						</div>
+						<div class="payment-form__field-group">
+							<select id="f-acnt-object">
+								<option value="hide">Адрес объекта</option>
+								<option value="type_1">Адрес объекта 1</option>
+								<option value="type_2">Адрес объекта 2</option>
+								<option value="type_3">Адрес объекта 3</option>
+								<option value="type_4">Адрес объекта 4</option>
+							</select>
+						</div>
+						<div class="clearfix">
+							<div class="payment-form__field-group payment-form__field-group_left">
+								<label for="f-adrs-amount" class="payment-form__label">Сумма к оплате</label>
+								<input type="text" class="payment-form__input" name="amount" id="f-adrs-amount">
+							</div>
+							<div class="payment-form__field-group payment-form__field-group_right">
+								<div class="commission-text">Размер комиссии:</div>
+								<div class="commission-value">0<span>%</span></div>
+							</div>
+						</div>
+						<button class="btn_submit">Перейти к оплате</button>
+						<p class="payment-form__agree">Нажимая на кнопку «Перейти к оплате», вы соглашаетесь с <a class="text-link" href="#">условиями оферты</a></p>
 					</form>
 				</div>
 			</div>
