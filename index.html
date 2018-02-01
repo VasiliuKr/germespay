@@ -51,12 +51,24 @@
 					</div>
 					<a href="#" class="payment-modal__link">Инструкция по оплате</a>
 					<form action="" id="paymentByAddress">
-						<input type="email" class="payment-modal__input">
-						<input type="text" class="payment-modal__input">
+						<div class="payment-form__field-group">
+							<label for="f-adrs-email" class="payment-form__label">E-mail</label>
+							<input type="email" class="payment-form__input" name="email" id="f-adrs-email">
+						</div>
+						<div class="payment-form__field-group">
+							<label for="f-adrs-city" class="payment-form__label">Город</label>
+							<input type="text" class="payment-form__input" name="city" id="f-adrs-city">
+						</div>
 					</form>
 					<form action="" id="paymentByAccount">
-						<input type="email" class="payment-modal__input">
-						<input type="text" class="payment-modal__input">
+						<div class="payment-form__field-group error">
+							<label for="f-acnt-email" class="payment-form__label">E-mail</label>
+							<input type="email" class="payment-form__input" name="email" id="f-acnt-email">
+						</div>
+						<div class="payment-form__field-group">
+							<label for="f-acnt-number" class="payment-form__label">Номер лицевого счета</label>
+							<input type="text" class="payment-form__input" name="number" id="f-acnt-number">
+						</div>
 					</form>
 				</div>
 			</div>

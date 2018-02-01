@@ -13,3 +13,15 @@ $('.scroll').on('click', function(e){
 		scrollTop : $(this.hash).offset().top
 	}, 1500);
 });
+
+
+$(document).on('focus', '.payment-form__input', function() {
+	if( $(this).val() === "" ){
+		$(this).parent().find('label').addClass('active');
+	}
+});
+$(document).on('blur', '.payment-form__input', function() {
+	if( $(this).val() === "" ){
+		$(this).parent().find('label').removeClass('active');
+	}
+});
