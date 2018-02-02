@@ -32,6 +32,7 @@
 }
 html {
 	overflow-x: hidden;
+	font-size: 16px;
 }
 
 body {
@@ -40,33 +41,32 @@ body {
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
 	width: 100%;
 	min-height: 100%;
-	font-size: 16px;
 	font-weight: normal;
 	line-height: 1.5;
 	position: relative;
 	overflow-x: hidden;
 }
 h1 {
-	font-size: 36px;
+	font-size: 2.25rem;
 	font-weight: bold;
 }
 h2 {
-	font-size: 30px;
+	font-size: 1.875rem;
 	font-weight: bold;
 }
 h3 {
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: bold;
 }
 h4 {
-	font-size: 18px;
+	font-size: 1.125rem;
 	font-weight: bold;
 }
 p {
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 a {
-	font-size: 12px;
+	font-size: 0.75rem;
 }
 .clearfix::after {
 	content: "";
@@ -108,7 +108,7 @@ a {
 }
 .logo__text {
 	font-weight: bold;
-	font-size: 28px;
+	font-size: 1.75rem;
 	color: #fff;
 	text-transform: uppercase;
 	vertical-align: middle;
@@ -118,14 +118,14 @@ a {
 }
 .header__nav {
 	float: left;
-	width: 52%;
-	text-align: center;
+	width: 60%;
+	padding-left: 4%;
 }
 .header__link {
-	font-size: 18px;
+	font-size: 1.125rem;
 	color: #fff;
 	text-decoration: none;
-	margin-right: 90px;
+	margin-right: 10%;
 	position: relative;
 	display: inline-block;
 }
@@ -152,7 +152,7 @@ a {
 .header__phone {
 	float: right;
 	color: #fff;
-	font-size: 20px;
+	font-size: 1.25rem;
 	font-weight: bold;
 }
 .header.header_white .header__phone {
@@ -162,8 +162,8 @@ a {
 	height: 925px;
 	background-image: url(../img/bg-top.jpg);
 	padding-top: 430px;
-	background-position-y: -25px;
-	background-position-x: -6px; 
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .sect-1__left {
 	width: 57%;
@@ -171,16 +171,16 @@ a {
 }
 .heading-main {
 	color: #fff;
-	font-size: 60px;
-	line-height: 72px;
+	font-size: 3.75rem;
+	line-height: 4.5rem;
 	margin-bottom: 35px;
 }
 .heading-main span {
 	color: #2196f3;
 }
 .heading-desc {
-	font-size: 21px;
-	line-height: 34px;
+	font-size: 1.3125rem;
+	line-height: 2.125rem;
 	color: #fff;
 	max-width: 510px;
 }
@@ -240,9 +240,9 @@ a {
 	float: left;
 	width: 30px;
 	height: 27px;
-	line-height: 40px;
+	line-height: 2.5rem;
 	cursor: pointer;
-	font-size: 14px;
+	font-size: 0.875rem;
 	color: #ffffff;
 }
 .payment-modal__switch {
@@ -261,7 +261,7 @@ a {
 }
 .payment-modal__link {
 	color: #2196f3;
-	font-size: 15px;
+	font-size: 0.9375rem;
 	font-weight: 500;
 	text-decoration: none;
 	border-bottom: 1px dashed #2196f3;
@@ -293,11 +293,11 @@ a {
 }
 .payment-form__label.active {
 	transform: translateY(-9px);
-	font-size: 11px;
+	font-size: 0.6875rem;
 	text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff;
 }
 .payment-form__input {
-	font-size: 15px;
+	font-size: 0.9375rem;
 	color: #3b4256;
 	width: 100%;
 	height: 54px;
@@ -326,7 +326,7 @@ a {
 	outline: 0;
 	border: none;
 	color: #fff;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 500;
 	text-transform: uppercase;
 	border-radius: 3px;
@@ -348,7 +348,7 @@ a {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
-	font-size: 16px;
+	font-size: 1rem;
 	color: #97a4b1;
 	width: 100%;
 	height: 54px;
@@ -411,8 +411,8 @@ a {
 	text-indent: 30px;
 	transition: all 0.15s ease-in;
 	color: #3b4256;
-	font-size: 15px;
-	line-height: 44px;
+	font-size: 0.9375rem;
+	line-height: 2.75rem;
 }
 .select-options li:hover {
 	background: #dfe8f2;
@@ -421,7 +421,7 @@ a {
 	display: none;
 }
 .payment-form__account-number-wrap {
-	font-size: 15px;
+	font-size: 0.9375rem;
 	font-weight: 500;
 	margin-top: 35px;
 	margin-bottom: 35px;
@@ -434,8 +434,8 @@ a {
 .commission-text {
 	display: inline-block;
 	width: 80px;
-	font-size: 13px;
-	line-height: 18px;
+	font-size: 0.8125rem;
+	line-height: 1.125rem;
 }
 .commission-value {
 	display: inline-block;
@@ -466,8 +466,8 @@ a {
 	margin-bottom: 122px;
 }
 .section-title {
-	font-size: 36px;
-	line-height: 44px;
+	font-size: 2.25rem;
+	line-height: 2.75rem;
 	font-weight: bold;
 }
 .features__item.section-title div {
@@ -490,15 +490,15 @@ a {
 	padding-right: 25px;
 }
 .features__topic {
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 1.125rem;
+	line-height: 1.5rem;
 	font-weight: bold;
 	margin-bottom: 17px;
 	max-width: 250px;
 }
 .features__desc {
-	font-size: 14px;
-	line-height: 22px;
+	font-size: 0.875rem;
+	line-height: 1.375rem;
 	color: #76889a;
 }
 
@@ -519,8 +519,8 @@ a {
 	height: 1070px;
 }
 .section-desc {
-	font-size: 14px;
-	line-height: 22px;
+	font-size: 0.875rem;
+	line-height: 1.375rem;
 	color: #76889a;
 }
 .payment-block__title {
@@ -555,9 +555,9 @@ a {
 	position: relative;
 }
 .point__title {
-	font-size: 18px;
+	font-size: 1.125rem;
 	font-weight: bold;
-	line-height: 22px;
+	line-height: 1.375rem;
 	margin-bottom: 20px;
 }
 .point__address,
@@ -573,8 +573,8 @@ a {
 }
 .address__title,
 .shedule__title {
-	font-size: 13px;
-	line-height: 22px;
+	font-size: 0.8125rem;
+	line-height: 1.375rem;
 	color: #76889a;
 	position: relative;
 	margin-bottom: 12px;
@@ -599,9 +599,9 @@ a {
 }
 .address__value,
 .shedule__value {
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 500;
-	line-height: 22px;
+	line-height: 1.375rem;
 }
 .sect-3__map {
 	position: absolute;
@@ -632,16 +632,16 @@ a {
 	margin-right: 10px;
 }
 .footer__logo .logo__text {
-	font-size: 26px;
+	font-size: 1.625rem;
 }
 .footer__phone {
 	width: 50%;
 	float: right;
 	text-align: right;
 	color: #fff;
-	font-size: 20px;
+	font-size: 1.25rem;
 	font-weight: bold;
-	line-height: 42px;
+	line-height: 2.625rem;
 }
 .footer__right {
 	float: right;
@@ -649,12 +649,12 @@ a {
 }
 .footer__text {
 	color: #fff;
-	font-size: 13px;
-	line-height: 24px;
+	font-size: 0.8125rem;
+	line-height: 1.5rem;
 	margin-bottom: 20px;
 }
 .footer__text a {
-	font-size: 13px;
+	font-size: 0.8125rem;
 }
 .footer__bottom {
 	background-color: #24272e;
@@ -681,7 +681,7 @@ a {
 	color: #fff;
 }
 .text-apply a {
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 .footer__bottom {
 	color: #b6b6b6;
@@ -716,17 +716,55 @@ a {
 
 
 
-@media only screen and (max-width: 1366px) and (min-width: 1025px) {
+@media only screen and (max-width: 1620px) {
+	html {
+		font-size: 14px;
+	}
 	.container {
-		max-width: 1140px;
+		max-width: 95%;
 	}
-	.heading-main {
-		font-size: 45px;
-		line-height: 55px;
+	.header__nav {
+		padding-left: 0;
 	}
-	.heading-desc {
-		font-size: 20px;
-		line-height: 32px;
+	.sect-1__left {
+		width: 55%;
+	}
+	.sect-1__right {
+		width: 43%;
+	}
+	.payment-modal {
+		padding: 10% 9%;
+	}
+	.payment-modal__title {
+		margin-bottom: 1.8rem;
+	}
+	.payment-modal__label_outer {
+		font-size: 15px;
+	}
+	.payment-modal__link {
+		margin-bottom: 2.15rem;
+		font-size: 14px;
+	}
+	.payment-form__label {
+		top: 18px;
+		font-size: 13px;
+	}
+	.payment-form__account-number-wrap {
+		margin-bottom: 2.1rem;
+		margin-top: 2.1rem;
+	}
+	.commission-text {
+		font-size: 12px;
+	}
+	.btn_submit {
+		font-size: 13px;
+	}
+	.payment-modal .btn_submit {
+		margin-top: 1.5rem;
+	}
+	.select-styled {
+		padding: 16px 25px 14px 30px;
+		font-size: 13px;
 	}
 	#sect-2 {
 		height: 630px;
@@ -735,16 +773,15 @@ a {
 	.features__item {
 		margin-bottom: 90px;
 	}
-	.section-title {
-		font-size: 32px;
-		line-height: 36px;
-	}
 	.features__img {
 		max-width: 60px;
 		max-height: 62px;
 	}
 	.features__topic {
 		margin-bottom: 10px;
+	}
+	.sect-3__right {
+		height: 30%;
 	}
 	.points__item {
 		padding: 14px;
@@ -776,48 +813,84 @@ a {
 	.address__value,
 	.shedule__value {
 		font-size: 11px;
-		line-height: 16px;
 	}
 }
-@media only screen and (max-width: 1024px) {
-	h1 {
-		font-size: 30px;
-		font-weight: bold;
+@media only screen and (max-width: 1366px) {
+	html {
+		font-size: 12px;
 	}
-	h2 {
+	.container {
+		max-width: 1140px;
+	}
+	.sect-1__left {
+		width: 53%;
+	}
+	.sect-1__right {
+		width: 45%;
+	}
+	.heading-main {
+		font-size: 3rem;
+		line-height: 3.8rem;
+	}
+	#sect-2 {
+		height: auto;
+		padding-top: 870px;
+	}
+	.payment-modal {
+		padding: 9% 8%;
+	}
+}
+@media only screen and (max-width: 1180px) {
+	.container {
+		max-width: 94%;
+	}
+	.header {
+		height: 70px;
+		line-height: 70px;
+	}
+	.logo__img {
+		width: 25px;
+		margin-right: 8px;
+	}
+	.logo__text {
+		font-size: 1.35rem;
+	}
+	.header__nav {
+		width: 58%;
+	}
+	.header__link {
+		margin-right: 4%;
+	}
+	#sect-1 {
+		height: 600px;
+		padding-top: 280px;
+	}
+	.sect-1__left {
+		width: 85%;
+		float: none;
+		margin: 0 auto;
+	}
+	.heading-main {
+		font-size: 3.6rem;
+		line-height: 4rem;
+	}
+	.sect-1__right {
+		width: 85%;
+		max-width: 600px;
+		float: none;
+		margin: 0 auto;
+	}
+	.payment-modal {
+		top: 60px;
+	}
+	.payment-modal__title {
 		font-size: 24px;
-		font-weight: bold;
-	}
-	h3 {
-		font-size: 20px;
-		font-weight: bold;
-	}
-	h4 {
-		font-size: 16px;
-		font-weight: bold;
-	}
-	p {
-		font-size: 13px;
-	}
-	a {
-		font-size: 11px;
 	}
 }
+
 @media only screen and (max-width: 767px) {
-	h1 {
-		font-size: 24px;
-		font-weight: bold;
-	}
-	h2 {
-		font-size: 18px;
-		font-weight: bold;
-	}
-	h3 {
-		font-size: 16px;
-		font-weight: bold;
-	}
-	h4 {
-		font-size: 14px;
-		font-weight: bold;
+	.header__link {
+		font-size: 1rem;
+		margin-right: 3%;
 	}
 }
