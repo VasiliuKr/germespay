@@ -156,6 +156,9 @@ a {
 	font-size: 1.25rem;
 	font-weight: bold;
 }
+.header__phone span {
+	vertical-align: middle;
+}
 .header.header_white .header__phone {
 	color: #3b4256;
 }
@@ -707,7 +710,7 @@ a {
 	display: inline-block;
 	background-image: url(../svg/Kislorod1.svg);
 	position: absolute;
-	top: -2px;
+	top: -3px;
 	right: -30px;
 	width: 23px;
 	height: 23px;
@@ -1085,7 +1088,7 @@ a {
 	.menu-link {
 		width: 20px;
 		height: 18px;
-		top: 23px;
+		top: 27px;
 		float: right;
 		position: relative;
 	}
@@ -1163,12 +1166,51 @@ a {
 	}
 	.features__item {
 		width: 100%;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	.features__item.section-title div {
+		width: 100%;
+	}
+	.footer__bottom {
+		height: 100px;
+		text-align: center;
+	}
+	.footer__bottom .footer__left,
+	.footer__bottom .footer__right {
+		width: 100%;
+		float: none;
+	}
+	.copyright,
+	.web-dev {
+		position: relative;
+	}
+	.footer__bottom .footer__left {
+		padding-right: 0;
+	}
+	.footer__bottom .footer__right {
+		padding-top: 10px;
+	}
+	.web-dev {
+		display: inline-block;
+		top: 0;
 	}
 }
 
 @media only screen and (max-width: 480px) {
+	.container {
+		max-width: 96%;
+	}
+	.header__logo {
+		margin-right: 15px;
+	}
 	.logo__img {
 		width: 20px;
+		margin-right: 3px;
+	}
+	.logo__text,
+	.header__phone {
+		font-size: 14px;
 	}
 	.payment-modal__title {
 		font-size: 20px;
@@ -1209,5 +1251,13 @@ a {
 		height: 48px;
 		font-size: 12px;
 		width: 100%;
+	}
+	.features__img {
+		max-width: 50px;
+		max-height: 47px;
+	}
+	.features__topic {
+		font-size: 14px;
+		line-height: 18px;
 	}
 }
