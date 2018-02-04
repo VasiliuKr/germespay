@@ -1139,17 +1139,30 @@ a {
 	}
 	.payment-modal {
 		top: 420px;
-		width: 94%;
-		right: 15px;
-		box-shadow: none;
+		width: 100%;
 		background: none;
-		padding: 8% 0;
+		padding: 8% 15px;
+		border-radius: 0;
+		left: 0;
 	}
 	.payment-modal__link-wrap {
 		text-align: center;
 	}
 	.payment-form__field-group {
 		margin-bottom: 15px;
+	}
+	.payment-form__agree {
+		margin-left: 0;
+		margin-right: 0;
+		text-align: center;
+		padding: 0 20px;
+	}
+	.section-title {
+		font-size: 24px;
+		line-height: 30px;
+	}
+	.features__item {
+		width: 100%;
 	}
 }
 
@@ -1182,6 +1195,19 @@ a {
 		width: 100%;
 	}
 	.payment-form__field-group_center {
-		text-align: center;
+		width: 190px;
+		margin: 0 auto;
+	}
+	.commission-text {
+		width: auto;
+		margin-right: 5px;
+	}
+	.commission-value {
+		vertical-align: middle;
+	}
+	.btn_submit {
+		height: 48px;
+		font-size: 12px;
+		width: 100%;
 	}
 }
