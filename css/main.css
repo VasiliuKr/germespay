@@ -1059,8 +1059,129 @@ a {
 }
 
 @media only screen and (max-width: 767px) {
+	.header__logo {
+		width: 23%;
+	}
+	.header__nav {
+		width: 57%;
+	}
 	.header__link {
 		font-size: 1rem;
-		margin-right: 3%;
+		margin-right: 2%;
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	.header__logo {
+		width: 38%;
+	}
+	.header__nav {
+		display: none;
+	}
+	.header__phone {
+		width: 41%;
+		float: left;
+	}
+	.menu-link {
+		width: 20px;
+		height: 18px;
+		top: 23px;
+		float: right;
+		position: relative;
+	}
+	.menu-link:before,
+	.menu-link:after,
+	.menu-link__line {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 3px;
+		width: 100%;
+		background-color: #2196f3;
+		transform-origin: center center;
+		transition: all .3s;
+	}
+	.menu-link:before {
+		top: 0;
+	}
+	.menu-link:after {
+		bottom: 0;
+	}
+	.menu-link__line {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.menu-link.active .menu-link__line {
+		opacity: 0;
+	}
+	.menu-link.active:before {
+		transform: translateY(-50%) rotate(-45deg);
+		top: 50%;
+	}
+	.menu-link.active:after {
+		transform: translateY(50%) rotate(45deg);
+		bottom: 50%;
+	}
+	#sect-1 {
+		height: 420px;
+		padding-top: 180px;
+	}
+	.heading-main {
+		font-size: 28px;
+		line-height: 32px;
+	}
+	.heading-desc {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.sect-1__right {
+		position: static;
+	}
+	.payment-modal {
+		top: 420px;
+		width: 94%;
+		right: 15px;
+		box-shadow: none;
+		background: none;
+		padding: 8% 0;
+	}
+	.payment-modal__link-wrap {
+		text-align: center;
+	}
+	.payment-form__field-group {
+		margin-bottom: 15px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.logo__img {
+		width: 20px;
+	}
+	.payment-modal__title {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.payment-modal__fieldset-wrap {
+		text-align: center;
+	}
+	.payment-modal__label_outer {
+		font-size: 13px;
+		line-height: 16px;
+		width: 32%;
+		text-align: left;
+	}
+	.payment-modal__fieldset {
+		margin-right: 15px;
+	}
+	.payment-modal__link {
+		font-size: 13px;
+	}
+	.payment-form__field-group_left,
+	.payment-form__field-group_right {
+		float: none;
+		width: 100%;
+	}
+	.payment-form__field-group_center {
+		text-align: center;
 	}
 }

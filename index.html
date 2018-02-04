@@ -27,6 +27,9 @@
 			<div class="header__phone">
 				<span>8 800 123-45-67</span>
 			</div>
+			<a href="#" class="menu-link">
+				<span class="menu-link__line"></span>
+			</a>
 		</div>
 	</header>
 	<section id="sect-1">
@@ -49,7 +52,10 @@
 						</div>
 						<label class="payment-modal__label_outer" for="number_way_payment">по номеру лицевого счета</label>
 					</div>
-					<a href="#" class="payment-modal__link">Инструкция по оплате</a>
+					<div class="payment-modal__link-wrap">
+						<a href="#" class="payment-modal__link">Инструкция по оплате</a>
+					</div>
+					
 					<form action="" id="paymentByAddress">
 						<div class="payment-form__field-group">
 							<label for="f-adrs-email" class="payment-form__label">E-mail</label>
@@ -106,7 +112,7 @@
 								<label for="f-adrs-amount" class="payment-form__label">Сумма к оплате</label>
 								<input type="text" class="payment-form__input" name="amount" id="f-adrs-amount">
 							</div>
-							<div class="payment-form__field-group payment-form__field-group_right">
+							<div class="payment-form__field-group payment-form__field-group_right payment-form__field-group_center">
 								<div class="commission-text">Размер комиссии:</div>
 								<div class="commission-value">0<span>%</span></div>
 							</div>
