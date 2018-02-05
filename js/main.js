@@ -113,14 +113,19 @@ $(document).on('click', '.menu-link', function(event) {
 });
 /***************** Menu mobile (end) ******************/
 
-
+/************* Modals (start) ***************/
 $(document).on('click', '.modal__close', function(event) {
 	event.preventDefault();
 	$(this).closest('.modal-overlay').hide();
 });
-/************* How to pay modal (start) ***************/
+
 $(document).on('click', '#how-to-pay', function(event) {
 	event.preventDefault();
 	$('.modal-overlay_howtopay').show();
 });
-/************* How to pay modal (end) ***************/
+
+$(document).on('click', '#privacy-agreement', function(event) {
+	event.preventDefault();
+	$('.modal-overlay_privacy-policy').show();
+});
+/*************** Modals (end) *****************/

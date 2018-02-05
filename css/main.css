@@ -769,7 +769,7 @@ a {
 .modal-overlay {
 	display: none;
 	overflow: hidden;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -784,9 +784,8 @@ a {
 	background-color: #fff;
 	position: absolute;
 	margin: auto;
-	top: 0;
+	top: 130px;
 	right: 0;
-	bottom: 0;
 	left: 0;
 	box-shadow: 5px 17px 40px rgba(0,0,0,.18);
 	border-radius: 10px;
@@ -850,6 +849,28 @@ a {
 	font-size: 14px;
 	line-height: 22px;
 	margin-bottom: 35px;
+}
+.howtopay__img {
+	max-width: 100%;
+}
+.modal_privacy-policy {
+	width: 53%;
+	padding: 120px 100px;
+}
+.privacy-policy {
+	text-align: justify;
+}
+.privacy-policy__title {
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: bold;
+	margin-bottom: 25px;
+	margin-top: 60px;
+}
+.privacy-policy p {
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 25px;
 }
 
 
