@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -20,9 +21,9 @@
 				<span class="logo__text">Goodwin</span>
 			</div>
 			<nav class="header__nav">
-				<a href="#" class="header__link">Онлайн оплата</a>
-				<a href="#" class="header__link">Преимущества</a>
-				<a href="#" class="header__link">Оплатить наличными</a>
+				<a href="#sect-1" class="header__link">Онлайн оплата</a>
+				<a href="#sect-2" class="header__link">Преимущества</a>
+				<a href="#sect-3" class="header__link">Оплатить наличными</a>
 			</nav>
 			<div class="header__phone">
 				<span>8 800 123-45-67</span>
@@ -50,10 +51,10 @@
 							<label class="payment-modal__label" for="number_way_payment"></label>
 							<span class="payment-modal__switch"></span>
 						</div>
-						<label class="payment-modal__label_outer" for="number_way_payment">по номеру лицевого счета</label>
+						<label class="payment-modal__label_outer inactive" for="number_way_payment">по номеру лицевого счета</label>
 					</div>
 					<div class="payment-modal__link-wrap">
-						<a href="#" class="payment-modal__link">Инструкция по оплате</a>
+						<a href="#" class="payment-modal__link" id="how-to-pay">Инструкция по оплате</a>
 					</div>
 					
 					<form action="" id="paymentByAddress">
@@ -117,7 +118,7 @@
 								<div class="commission-value">0<span>%</span></div>
 							</div>
 						</div>
-						<button class="btn_submit">Перейти к оплате</button>
+						<button class="btn_submit" disabled>Перейти к оплате</button>
 						<p class="payment-form__agree">Нажимая на кнопку «Перейти к оплате», вы соглашаетесь с <a class="text-link" href="#">условиями оферты</a></p>
 					</form>
 
@@ -158,7 +159,7 @@
 								<div class="commission-value">0<span>%</span></div>
 							</div>
 						</div>
-						<button class="btn_submit">Перейти к оплате</button>
+						<button class="btn_submit" disabled>Перейти к оплате</button>
 						<p class="payment-form__agree">Нажимая на кнопку «Перейти к оплате», вы соглашаетесь с <a class="text-link" href="#">условиями оферты</a></p>
 					</form>
 				</div>
@@ -346,6 +347,30 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="modal-overlay modal-overlay_howtopay">
+		<div class="modal modal_howtopay">
+			<span class="modal__close cross-symbol"></span>
+			<div class="modal__title">Как оплатить?</div>
+			<ul class="howtopay__list">
+				<li class="howtopay__item">
+					<div class="howtopay__num">01</div>
+					<div class="howtopay__text">Выберите вариант оплаты по номеру лицевого счете, либо по адресу объекта</div>
+					<img src="img/step_1.jpg" alt="" class="howtopay__img">
+				</li>
+				<li class="howtopay__item">
+					<div class="howtopay__num">02</div>
+					<div class="howtopay__text">Выберите услугу и введите сумму средств которые хотели бы оплатить за услуги</div>
+					<img src="img/step_2.jpg" alt="" class="howtopay__img">
+				</li>
+				<li class="howtopay__item">
+					<div class="howtopay__num">03</div>
+					<div class="howtopay__text">Нажмите кнопку оплатить и следуйте дальнейшим указаниям платежной системы</div>
+					<img src="img/step_3.jpg" alt="" class="howtopay__img">
+				</li>
+			</ul>
+		</div>
+	</div>
 
 
 	<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>

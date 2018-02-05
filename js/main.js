@@ -85,8 +85,42 @@ $('select').each(function(){
 $(document).on('change', '.payment-modal__radio', function(event) {
 	// event.preventDefault();
 	var addressForm = $('#paymentByAddress'),
-		accountForm = $('#paymentByAccount');
+		accountForm = $('#paymentByAccount'),
+		$this = $(this),
+		fieldset = $this.closest('.payment-modal__fieldset-wrap'),
+		labelOuter = fieldset.find('.payment-modal__label_outer');
 	addressForm.toggle();
-	accountForm.toggle();	
+	accountForm.toggle();
+	labelOuter.toggleClass('inactive');	
 });
 /***************** Changing form content (end) ******************/
+
+/***************** Menu mobile (start) ******************/
+$(document).on('click', '.menu-link', function(event) {
+	event.preventDefault();
+	/* Act on the event */
+	var $this = $(this),
+		header = $this.closest('.header'),
+		navMenu = header.find('.header__nav'),
+		phone = header.find('.header__phone span').text();
+	if (!$('.header__nav').find('.header__phone').length) {
+		navMenu.append('<div class="header__phone">'+phone+'</div>');
+	}
+	
+	$('body').toggleClass('stop-scroll');
+	navMenu.toggleClass('mobile');
+	$this.toggleClass('active');
+});
+/***************** Menu mobile (end) ******************/
+
+
+$(document).on('click', '.modal__close', function(event) {
+	event.preventDefault();
+	$(this).closest('.modal-overlay').hide();
+});
+/************* How to pay modal (start) ***************/
+$(document).on('click', '#how-to-pay', function(event) {
+	event.preventDefault();
+	$('.modal-overlay_howtopay').show();
+});
+/************* How to pay modal (end) ***************/
