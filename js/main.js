@@ -110,7 +110,33 @@ $(document).on('click', '.menu-link', function(event) {
 	$('body').toggleClass('stop-scroll');
 	navMenu.toggleClass('mobile');
 	$this.toggleClass('active');
+
+	
 });
+
+$(document).on('click', '.header__link', function(event) {
+	// event.preventDefault();
+	/* Act on the event */
+	var $this = $(this),
+		header = $this.closest('.header'),
+		navMenu = header.find('.header__nav'),
+		menuButton = header.find('.menu-link'),
+		target = $this.attr('href');
+	if (navMenu.hasClass('mobile')) {
+		console.log(target);
+		if (target == '#sect-2') {
+			target = '.features__item.section-title';
+			$('html, body').animate({scrollTop: $(target).offset().top - 100 }, 800);
+		} else {
+			$('html, body').animate({scrollTop: $(target).offset().top - 50 }, 800);
+		}
+		$('body').toggleClass('stop-scroll');
+		navMenu.toggleClass('mobile');
+		menuButton.toggleClass('active');
+	}
+	
+});
+
 /***************** Menu mobile (end) ******************/
 
 /************* Modals (start) ***************/

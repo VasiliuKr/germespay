@@ -872,6 +872,66 @@ a {
 	line-height: 24px;
 	margin-bottom: 25px;
 }
+.header.header_404 {
+	background-color: #f5f6f9;
+	position: relative;
+	box-shadow: none;
+}
+.header.header_404 .logo__text {
+	color: #2f3239;
+}
+.header.header_404 .header__link,
+.header.header_404 .header__phone {
+	color: #3b4256;
+}
+.section-404 {
+	background-color: #f5f6f9;
+	height: 800px;
+	position: relative;
+}
+.error404 {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	width: 50%;
+	right: 0;
+	background-position: center;
+	height: 345px;
+	bottom: 0;
+	background-image: url(../img/404.png);
+	margin: auto;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 140px;
+}
+
+.error404__title {
+	font-size: 36px;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+.error404__text {
+	font-size: 14px;
+	line-height: 22px;
+	color: #76889a;
+	margin-bottom: 80px;
+}
+.error404__btn {
+	width: 280px;
+	height: 60px;
+	cursor: pointer;
+	outline: 0;
+	border: none;
+	color: #fff;
+	font-size: 0.875rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	border-radius: 3px;
+	background-color: #fff;
+	background-image: linear-gradient(to bottom, #2196f3, #1179cb);
+	margin: 0 auto;
+}
 
 
 
