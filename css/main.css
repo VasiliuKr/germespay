@@ -31,7 +31,6 @@
 	padding: 0;
 }
 html {
-	overflow-x: hidden;
 	font-size: 16px;
 	height: 100%;
 }
@@ -81,6 +80,9 @@ a {
 }
 .stop-scroll {
 	height: 100%;
+	overflow: hidden;
+}
+.showing-modal {
 	overflow: hidden;
 }
 .text-link {
@@ -768,25 +770,21 @@ a {
 }
 .modal-overlay {
 	display: none;
-	overflow: hidden;
-	position: absolute;
+	overflow: auto;
+	position: fixed;
 	top: 0;
-	right: 0;
-	bottom: 0;
 	left: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 1050;
-	outline: 0;
 	background-color: rgba(87,103,118,0.8);
 }
 .modal {
+	position: relative;
 	text-align: center;
 	box-sizing: border-box;
 	background-color: #fff;
-	position: absolute;
-	margin: auto;
-	top: 130px;
-	right: 0;
-	left: 0;
+	margin: 130px auto;
 	box-shadow: 5px 17px 40px rgba(0,0,0,.18);
 	border-radius: 10px;
 }
@@ -822,7 +820,7 @@ a {
 }
 .modal_howtopay {
 	width: 81%;
-	height: 800px;
+	/*height: 800px;*/
 	padding: 110px 120px 80px 110px;
 }
 .howtopay__list {
@@ -837,6 +835,7 @@ a {
 .howtopay__item {
 	width: 27%;
 	display: inline-block;
+	vertical-align: top;
 }
 .howtopay__num {
 	font-size: 36px;
@@ -849,6 +848,8 @@ a {
 	font-size: 14px;
 	line-height: 22px;
 	margin-bottom: 35px;
+	text-align: left;
+	min-height: 80px;
 }
 .howtopay__img {
 	max-width: 100%;
@@ -921,6 +922,9 @@ a {
 	width: 280px;
 	height: 60px;
 	cursor: pointer;
+	display: block;
+	line-height: 60px;
+	text-decoration: none;
 	outline: 0;
 	border: none;
 	color: #fff;
@@ -1033,6 +1037,10 @@ a {
 	.address__value,
 	.shedule__value {
 		font-size: 11px;
+	}
+	.modal_howtopay {
+		width: 88%;
+		padding: 80px 60px 60px 60px;
 	}
 }
 @media only screen and (max-width: 1366px) {
@@ -1274,6 +1282,23 @@ a {
 	.web-dev {
 		font-size: 11px;
 	}
+	.howtopay__item {
+		width: 31%;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.howtopay__item {
+		width: 100%;
+		text-align: center;
+	}
+	.howtopay__num {
+		float: left;
+		width: 70px;
+	}
+	.howtopay__text {
+		padding-top: 3px;
+	}
 }
 
 @media only screen and (max-width: 767px) {
@@ -1286,6 +1311,18 @@ a {
 	.header__link {
 		font-size: 1rem;
 		margin-right: 2%;
+	}
+	.modal__title {
+		font-size: 30px;
+		line-height: 38px;
+		margin-bottom: 40px;
+	}
+	.howtopay__num {
+		font-size: 30px;
+		line-height: 38px;
+	}
+	.howtopay__text {
+		min-height: auto;
 	}
 }
 
@@ -1544,7 +1581,29 @@ a {
 		font-size: 14px;
 		line-height: 18px;
 	}
-	
+	.modal_howtopay {
+		width: 100%;
+		padding: 80px 30px 60px 30px;
+	}
+	.modal__close.cross-symbol {
+		top: 20px;
+		right: 15px;
+	}
+	.modal__title {
+		font-size: 26px;
+		line-height: 30px;
+	}
+	.howtopay__num {
+		width: 17%;
+		font-size: 26px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
+	.howtopay__text {
+		float: right;
+		width: 80%;
+		padding-top: 0;
+	}
 }
 
 @media only screen and (max-width: 360px) {

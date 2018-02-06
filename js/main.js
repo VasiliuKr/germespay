@@ -140,18 +140,38 @@ $(document).on('click', '.header__link', function(event) {
 /***************** Menu mobile (end) ******************/
 
 /************* Modals (start) ***************/
+var scrollBarWidth = window.innerWidth - document.body.offsetWidth;
+console.log(scrollBarWidth);
 $(document).on('click', '.modal__close', function(event) {
 	event.preventDefault();
 	$(this).closest('.modal-overlay').hide();
+	$('body').removeClass('showing-modal');
 });
 
 $(document).on('click', '#how-to-pay', function(event) {
 	event.preventDefault();
+	$('html').css('margin-right', scrollBarWidth);
+	$('.header').css('padding-right', scrollBarWidth);
 	$('.modal-overlay_howtopay').show();
+	
+	$('body').addClass('showing-modal');
+
 });
 
 $(document).on('click', '#privacy-agreement', function(event) {
 	event.preventDefault();
+	$('html').css('margin-right', scrollBarWidth);
+	$('.header').css('padding-right', scrollBarWidth);
 	$('.modal-overlay_privacy-policy').show();
+	$('body').addClass('showing-modal');
 });
+
+$(document).mouseup(function (e) {
+	var container = $(".modal-overlay");
+	if (container.has(e.target).length === 0){
+		container.hide();
+		$('body').removeClass('showing-modal');
+	}
+});
+
 /*************** Modals (end) *****************/
