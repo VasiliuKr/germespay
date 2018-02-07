@@ -83,7 +83,7 @@ a {
 	overflow: hidden;
 }
 .showing-modal {
-	overflow: hidden;
+	overflow-y: hidden;
 }
 .text-link {
 	color: #2196f3;
@@ -855,7 +855,7 @@ a {
 	max-width: 100%;
 }
 .modal_privacy-policy {
-	width: 53%;
+	max-width: 1024px;
 	padding: 120px 100px;
 }
 .privacy-policy {
@@ -896,9 +896,10 @@ a {
 	left: 0;
 	top: 0px;
 	width: 50%;
+	min-width: 550px;
 	right: 0;
 	background-position: center;
-	height: 345px;
+	height: 410px;
 	bottom: 0;
 	background-image: url(../img/404.png);
 	margin: auto;
@@ -1041,6 +1042,9 @@ a {
 	.modal_howtopay {
 		width: 88%;
 		padding: 80px 60px 60px 60px;
+	}
+	.section-404 {
+		height: 650px;
 	}
 }
 @media only screen and (max-width: 1366px) {
@@ -1299,6 +1303,9 @@ a {
 	.howtopay__text {
 		padding-top: 3px;
 	}
+	.modal_privacy-policy {
+		padding: 100px 45px;
+	}
 }
 
 @media only screen and (max-width: 767px) {
@@ -1323,6 +1330,9 @@ a {
 	}
 	.howtopay__text {
 		min-height: auto;
+	}
+	.section-404 {
+		height: 550px;
 	}
 }
 
@@ -1510,6 +1520,21 @@ a {
 	.web-dev {
 		display: inline-block;
 		top: 0;
+	}
+	.modal_privacy-policy {
+		padding: 80px 20px;
+	}
+	.modal_privacy-policy .modal__title {
+		font-size: 21px;
+	}
+	.privacy-policy__title {
+		text-align: center;
+	}
+	.error404 {
+		width: 90%;
+		min-width: auto;
+		background-position: top;
+		padding-top: 0;
 	}
 }
 

@@ -141,36 +141,42 @@ $(document).on('click', '.header__link', function(event) {
 
 /************* Modals (start) ***************/
 var scrollBarWidth = window.innerWidth - document.body.offsetWidth;
+function openModal() {
+	$('html').css('margin-right', scrollBarWidth);
+	$('.header__phone').css('margin-right', '8px');
+	$('body').addClass('showing-modal');
+}
+function closeModal() {
+	$('html').css('margin-right', '0');
+	$('.header__phone').css('margin-right', '0');
+	$('body').removeClass('showing-modal');
+}
 console.log(scrollBarWidth);
 $(document).on('click', '.modal__close', function(event) {
 	event.preventDefault();
+	closeModal();
 	$(this).closest('.modal-overlay').hide();
-	$('body').removeClass('showing-modal');
+
 });
 
 $(document).on('click', '#how-to-pay', function(event) {
 	event.preventDefault();
-	$('html').css('margin-right', scrollBarWidth);
-	$('.header').css('padding-right', scrollBarWidth);
+	openModal();
 	$('.modal-overlay_howtopay').show();
-	
-	$('body').addClass('showing-modal');
-
 });
 
 $(document).on('click', '#privacy-agreement', function(event) {
 	event.preventDefault();
-	$('html').css('margin-right', scrollBarWidth);
-	$('.header').css('padding-right', scrollBarWidth);
+	openModal();
 	$('.modal-overlay_privacy-policy').show();
-	$('body').addClass('showing-modal');
+	
 });
 
 $(document).mouseup(function (e) {
 	var container = $(".modal-overlay");
 	if (container.has(e.target).length === 0){
 		container.hide();
-		$('body').removeClass('showing-modal');
+		closeModal();
 	}
 });
 
