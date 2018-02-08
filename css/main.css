@@ -588,18 +588,27 @@ a {
 }
 .points__list {
 	list-style: none;
-	width: 87%;
+	width: 100%;
 }
 .points__item {
-	background-color: #fff;
-	padding: 20px;
 	margin-bottom: 13px;
-	border: solid 1px #e9edf2;
-	position: relative;
+	margin-right: 6px;
+	border-right: 6px solid transparent;
+	transition: 0.3s;
 }
-.points__item:hover {
+.points__item.active {
+	border-right: 6px solid #2196f3;
+}
+.points__item-inner:hover {
 	box-shadow: 0 1px 12px rgba(0,0,0,.12);
 	cursor: pointer;
+}
+.points__item-inner {
+	width: 87%;
+	padding: 20px;
+	position: relative;
+	border: solid 1px #e9edf2;
+	background-color: #fff;
 }
 .point__img {
 	max-width: 150px;
@@ -1008,7 +1017,7 @@ a {
 	.sect-3__right {
 		height: 29%;
 	}
-	.points__item {
+	.points__item-inner {
 		padding: 14px;
 	}
 	.point__img {

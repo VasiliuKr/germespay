@@ -188,15 +188,75 @@ function initMap() {
 	// Create a map object and specify the DOM element for display.
 	var map = new google.maps.Map(document.getElementById('pointsMap'), {
 		center: {lat: 56.136874, lng: 47.261590},
-		scrollwheel: false,
-		zoom: 14,
+		// scrollwheel: false,
+		zoom: 13,
 		styles: styleArray,
 		disableDefaultUI: true
 	});
 	// Create marker
-	var myMarker = new google.maps.Marker({
+	var office1 = new google.maps.Marker({
 		position: {lat: 56.127956, lng: 47.265265},
 		map: map,
 		icon: 'img/mark.png'
+	});
+
+	var office2 = new google.maps.Marker({
+		position: {lat: 56.137156, lng: 47.276565},
+		map: map,
+		icon: 'img/mark.png'
+	});
+
+	var office3 = new google.maps.Marker({
+		position: {lat: 56.131156, lng: 47.278565},
+		map: map,
+		icon: 'img/mark.png'
+	});
+
+	var office4 = new google.maps.Marker({
+		position: {lat: 56.117156, lng: 47.256565},
+		map: map,
+		icon: 'img/mark.png'
+	});
+
+
+	office1.addListener('click', function() {
+		map.setZoom(16);
+		map.setCenter(office1.getPosition());
+	});
+	office2.addListener('click', function() {
+		map.setZoom(16);
+		map.setCenter(office2.getPosition());
+	});
+	office3.addListener('click', function() {
+		map.setZoom(16);
+		map.setCenter(office3.getPosition());
+	});
+	office4.addListener('click', function() {
+		map.setZoom(16);
+		map.setCenter(office4.getPosition());
+	});
+
+
+	$(document).on('click', '.points__item-inner', function(event) {
+		event.preventDefault();
+		var pointItem = $(this).parent('.points__item'),
+			otherPointItems = pointItem.siblings('.points__item');
+		pointItem.addClass('active');
+		otherPointItems.removeClass('active');
+		map.setZoom(16);
+		switch($(this).data('officeId')) {
+			case 1:
+				map.setCenter(office1.getPosition());
+				break;
+			case 2:
+				map.setCenter(office2.getPosition());
+				break;
+			case 3:
+				map.setCenter(office3.getPosition());
+				break;
+			case 4:
+				map.setCenter(office4.getPosition());
+				break;
+		}
 	});
 }

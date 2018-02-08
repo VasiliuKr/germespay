@@ -9,6 +9,8 @@ https://snazzymaps.com/style/132/light-gray gray style map
 
 https://codepen.io/wallaceerick/pen/ctsCz styled select
 
+https://select2.org/dropdown  plugin for input with dropdown select
+
 **TODO**
 
 Добавить возможность писать в поле ввода, где стоит select (Город, Улица и пр.)

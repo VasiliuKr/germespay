@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<link rel="stylesheet" href="css/main.css">
+	<link href="lib/select2/select2.css" rel="stylesheet" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
@@ -62,9 +63,10 @@
 							<label for="f-adrs-email" class="payment-form__label">E-mail</label>
 							<input type="email" class="payment-form__input" name="email" id="f-adrs-email">
 						</div>
+						
 						<div class="payment-form__field-group">
 							<select id="f-adrs-city">
-								<option value="hide">Город</option>
+								<option></option>
 								<option value="cheboksary">Чебоксары</option>
 								<option value="alatyr">Алатырь</option>
 								<option value="novocheboksarsk">Новочебоксарск</option>
@@ -74,7 +76,7 @@
 						</div>
 						<div class="payment-form__field-group">
 							<select id="f-adrs-street">
-								<option value="hide">Улица</option>
+								<option></option>
 								<option value="street_1">пр. Ленина</option>
 								<option value="street_2">ул. Гагарина</option>
 								<option value="street_3">пер. Маяковского</option>
@@ -83,8 +85,8 @@
 						</div>
 						<div class="clearfix">
 							<div class="payment-form__field-group payment-form__field-group_left">
-								<select id="f-adrs-house">
-									<option value="hide">Номер дома</option>
+								<select id="f-adrs-house" class="js-select2">
+									<option></option>
 									<option value="street_1">4</option>
 									<option value="street_2">9</option>
 									<option value="street_3">25</option>
@@ -98,7 +100,7 @@
 						</div>
 						<div class="payment-form__field-group">
 							<select id="f-adrs-type">
-								<option value="hide">Вид платежа</option>
+								<option></option>
 								<option value="type_1">Вид платежа 1</option>
 								<option value="type_2">Вид платежа 2</option>
 								<option value="type_3">Вид платежа 3</option>
@@ -133,7 +135,7 @@
 						</div>
 						<div class="payment-form__field-group">
 							<select id="f-acnt-type">
-								<option value="hide">Вид платежа</option>
+								<option></option>
 								<option value="type_1">Вид платежа 1</option>
 								<option value="type_2">Вид платежа 2</option>
 								<option value="type_3">Вид платежа 3</option>
@@ -142,7 +144,7 @@
 						</div>
 						<div class="payment-form__field-group">
 							<select id="f-acnt-object">
-								<option value="hide">Адрес объекта</option>
+								<option></option>
 								<option value="type_1">Адрес объекта 1</option>
 								<option value="type_2">Адрес объекта 2</option>
 								<option value="type_3">Адрес объекта 3</option>
@@ -229,59 +231,67 @@
 					<div class="payment-block__title section-title">Оплатить наличными</div>
 					<div class="payment-block__desc section-desc">Вы можете оплатить коммунальные платежи наличными в одном из пунктов приема платежей</div>
 					<ul class="points__list">
-						<li class="points__item clearfix">
-							<img src="img/point_1.jpg" alt="" class="point__img">
-							<div class="point__data">
-								<div class="point__title">Касса № 1</div>
-								<div class="point__address">
-									<div class="address__title">Адрес</div>
-									<div class="address__value">ул. Привокзальная,  д.10</div>
-								</div>
-								<div class="point__shedule">
-									<div class="shedule__title">Время работы</div>
-									<div class="shedule__value">пн-вс: 11:00 – 21:00</div>
-								</div>
-							</div>
-						</li>
-						<li class="points__item clearfix">
-							<img src="img/point_2.jpg" alt="" class="point__img">
-							<div class="point__data">
-								<div class="point__title">Касса № 2</div>
-								<div class="point__address">
-									<div class="address__title">Адрес</div>
-									<div class="address__value">ул. Шевченко,  д.27</div>
-								</div>
-								<div class="point__shedule">
-									<div class="shedule__title">Время работы</div>
-									<div class="shedule__value">пн, ср, пт.: 09:00 – 15:00<br> чт, вт, сб.: 11:00 – 16:00</div>
+						<li class="points__item">
+							<div class="points__item-inner clearfix" data-office-id="1">
+								<img src="img/point_1.jpg" alt="" class="point__img">
+								<div class="point__data">
+									<div class="point__title">Касса № 1</div>
+									<div class="point__address">
+										<div class="address__title">Адрес</div>
+										<div class="address__value">ул. Привокзальная,  д.10</div>
+									</div>
+									<div class="point__shedule">
+										<div class="shedule__title">Время работы</div>
+										<div class="shedule__value">пн-вс: 11:00 – 21:00</div>
+									</div>
 								</div>
 							</div>
 						</li>
-						<li class="points__item clearfix">
-							<img src="img/point_1.jpg" alt="" class="point__img">
-							<div class="point__data">
-								<div class="point__title">Касса № 3</div>
-								<div class="point__address">
-									<div class="address__title">Адрес</div>
-									<div class="address__value">ул. Привокзальная,  д.10</div>
-								</div>
-								<div class="point__shedule">
-									<div class="shedule__title">Время работы</div>
-									<div class="shedule__value">пн-вс: 11:00 – 21:00</div>
+						<li class="points__item">
+							<div class="points__item-inner clearfix" data-office-id="2">
+								<img src="img/point_2.jpg" alt="" class="point__img">
+								<div class="point__data">
+									<div class="point__title">Касса № 2</div>
+									<div class="point__address">
+										<div class="address__title">Адрес</div>
+										<div class="address__value">ул. Шевченко,  д.27</div>
+									</div>
+									<div class="point__shedule">
+										<div class="shedule__title">Время работы</div>
+										<div class="shedule__value">пн, ср, пт.: 09:00 – 15:00<br> чт, вт, сб.: 11:00 – 16:00</div>
+									</div>
 								</div>
 							</div>
 						</li>
-						<li class="points__item clearfix">
-							<img src="img/point_2.jpg" alt="" class="point__img">
-							<div class="point__data">
-								<div class="point__title">Касса № 4</div>
-								<div class="point__address">
-									<div class="address__title">Адрес</div>
-									<div class="address__value">ул. Шевченко,  д.27</div>
+						<li class="points__item">
+							<div class="points__item-inner clearfix" data-office-id="3">
+								<img src="img/point_1.jpg" alt="" class="point__img">
+								<div class="point__data">
+									<div class="point__title">Касса № 3</div>
+									<div class="point__address">
+										<div class="address__title">Адрес</div>
+										<div class="address__value">ул. Привокзальная,  д.10</div>
+									</div>
+									<div class="point__shedule">
+										<div class="shedule__title">Время работы</div>
+										<div class="shedule__value">пн-вс: 11:00 – 21:00</div>
+									</div>
 								</div>
-								<div class="point__shedule">
-									<div class="shedule__title">Время работы</div>
-									<div class="shedule__value">пн, ср, пт.: 09:00 – 15:00<br> чт, вт, сб.: 11:00 – 16:00</div>
+							</div>
+						</li>
+						<li class="points__item">
+							<div class="points__item-inner clearfix" data-office-id="4">
+								<img src="img/point_2.jpg" alt="" class="point__img">
+								<div class="point__data">
+									<div class="point__title">Касса № 4</div>
+									<div class="point__address">
+										<div class="address__title">Адрес</div>
+										<div class="address__value">ул. Шевченко,  д.27</div>
+									</div>
+									<div class="point__shedule">
+										<div class="shedule__title">Время работы</div>
+										<div class="shedule__value">пн, ср, пт.: 09:00 – 15:00<br> чт, вт, сб.: 11:00 – 16:00</div>
+									</div>
 								</div>
 							</div>
 						</li>
@@ -397,8 +407,9 @@
 
 
 	<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-	
+	<script src="lib/select2/select2.full.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+
 	<script type="text/javascript" src="js/googleMap.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWcxEkDPisfOKyxE0CIeNW3ItLWOiMJ4U&callback=initMap">
 	</script>

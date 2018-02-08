@@ -33,7 +33,7 @@ $(document).on('blur', '.payment-form__input', function() {
 
 
 /*********************** Styled select (start) **********************/
-$('select').each(function(){
+/*$('select').each(function(){
 	var $this = $(this), numberOfOptions = $(this).children('option').length;
 
 	$this.addClass('select-hidden'); 
@@ -78,7 +78,7 @@ $('select').each(function(){
 		$list.hide();
 	});
 
-});
+});*/
 /*********************** Styled select (end) **********************/
 
 /***************** Changing form content (start) ******************/
@@ -123,7 +123,6 @@ $(document).on('click', '.header__link', function(event) {
 		menuButton = header.find('.menu-link'),
 		target = $this.attr('href');
 	if (navMenu.hasClass('mobile')) {
-		console.log(target);
 		if (target == '#sect-2') {
 			target = '.features__item.section-title';
 			$('html, body').animate({scrollTop: $(target).offset().top - 100 }, 800);
@@ -145,13 +144,12 @@ function openModal() {
 	$('html').css('margin-right', scrollBarWidth);
 	$('.header__phone').css('margin-right', '8px');
 	$('body').addClass('showing-modal');
-}
+};
 function closeModal() {
 	$('html').css('margin-right', '0');
 	$('.header__phone').css('margin-right', '0');
 	$('body').removeClass('showing-modal');
-}
-console.log(scrollBarWidth);
+};
 $(document).on('click', '.modal__close', function(event) {
 	event.preventDefault();
 	closeModal();
@@ -181,3 +179,39 @@ $(document).mouseup(function (e) {
 });
 
 /*************** Modals (end) *****************/
+
+$(document).ready(function() {
+	$('#f-adrs-city').select2({
+		placeholder: 'Город',
+		language: {
+			'noResults': function(){
+				return 'Нет совпадений';
+			}
+		}
+	});
+	$('#f-adrs-street').select2({
+		placeholder: 'Улица'
+	});
+	$('#f-adrs-house').select2({
+		placeholder: 'Номер дома'
+	});
+	$('#f-adrs-type').select2({
+		placeholder: 'Вид платежа'
+	});
+	$('#f-acnt-type').select2({
+		placeholder: 'Вид платежа'
+	});
+	$('#f-acnt-object').select2({
+		placeholder: 'Адрес объекта'
+	});
+});
+
+
+
+
+// $('.points__item-inner').hover(function() {
+// 	$(this).parent('.points__item').addClass('active')
+// }, function() {
+// 	$(this).parent('.points__item').removeClass('active')
+// });
+
