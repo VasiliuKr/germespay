@@ -59,13 +59,14 @@
 					</div>
 					
 					<form action="" id="paymentByAddress">
-						<div class="payment-form__field-group">
+						<div class="payment-form__field-group error">
 							<label for="f-adrs-email" class="payment-form__label">E-mail</label>
 							<input type="email" class="payment-form__input" name="email" id="f-adrs-email">
+							<div class="error-text">Введите правильный формат электронной почты</div>
 						</div>
 						
 						<div class="payment-form__field-group">
-							<select id="f-adrs-city">
+							<select id="f-adrs-city" disabled>
 								<option></option>
 								<option value="cheboksary">Чебоксары</option>
 								<option value="alatyr">Алатырь</option>
@@ -75,7 +76,7 @@
 							</select>
 						</div>
 						<div class="payment-form__field-group">
-							<select id="f-adrs-street">
+							<select id="f-adrs-street" disabled>
 								<option></option>
 								<option value="street_1">пр. Ленина</option>
 								<option value="street_2">ул. Гагарина</option>
@@ -85,7 +86,7 @@
 						</div>
 						<div class="clearfix">
 							<div class="payment-form__field-group payment-form__field-group_left">
-								<select id="f-adrs-house" class="js-select2">
+								<select id="f-adrs-house" disabled>
 									<option></option>
 									<option value="street_1">4</option>
 									<option value="street_2">9</option>
@@ -95,11 +96,11 @@
 							</div>
 							<div class="payment-form__field-group payment-form__field-group_right">
 								<label for="f-adrs-flat" class="payment-form__label">Номер квартиры</label>
-								<input type="text" class="payment-form__input" name="flat" id="f-adrs-flat">
+								<input type="text" class="payment-form__input" name="flat" id="f-adrs-flat" disabled>
 							</div>
 						</div>
 						<div class="payment-form__field-group">
-							<select id="f-adrs-type">
+							<select id="f-adrs-type" disabled>
 								<option></option>
 								<option value="type_1">Вид платежа 1</option>
 								<option value="type_2">Вид платежа 2</option>
@@ -113,7 +114,7 @@
 						<div class="clearfix">
 							<div class="payment-form__field-group payment-form__field-group_left">
 								<label for="f-adrs-amount" class="payment-form__label">Сумма к оплате</label>
-								<input type="text" class="payment-form__input" name="amount" id="f-adrs-amount">
+								<input type="text" class="payment-form__input" name="amount" id="f-adrs-amount" disabled>
 							</div>
 							<div class="payment-form__field-group payment-form__field-group_right payment-form__field-group_center">
 								<div class="commission-text">Размер комиссии:</div>
@@ -230,8 +231,8 @@
 				<div class="payment-block">
 					<div class="payment-block__title section-title">Оплатить наличными</div>
 					<div class="payment-block__desc section-desc">Вы можете оплатить коммунальные платежи наличными в одном из пунктов приема платежей</div>
-					<ul class="points__list">
-						<li class="points__item">
+					<ul class="points__list" id="booking-desks-list">
+						<li class="points__item" id="booking-desk-1">
 							<div class="points__item-inner clearfix" data-office-id="1">
 								<img src="img/point_1.jpg" alt="" class="point__img">
 								<div class="point__data">
@@ -247,7 +248,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="points__item">
+						<li class="points__item" id="booking-desk-2">
 							<div class="points__item-inner clearfix" data-office-id="2">
 								<img src="img/point_2.jpg" alt="" class="point__img">
 								<div class="point__data">
@@ -263,7 +264,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="points__item">
+						<li class="points__item" id="booking-desk-3">
 							<div class="points__item-inner clearfix" data-office-id="3">
 								<img src="img/point_1.jpg" alt="" class="point__img">
 								<div class="point__data">
@@ -279,7 +280,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="points__item">
+						<li class="points__item" id="booking-desk-4">
 							<div class="points__item-inner clearfix" data-office-id="4">
 								<img src="img/point_2.jpg" alt="" class="point__img">
 								<div class="point__data">

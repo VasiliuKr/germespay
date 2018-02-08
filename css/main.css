@@ -367,6 +367,15 @@ a {
 .payment-form__field-group.error .payment-form__input {
 	border-color: #f30d0d;
 }
+.error-text {
+	color: #f30d0d;
+	margin-top: 7px;
+	margin-left: 30px;
+	display: none;
+}
+.payment-form__field-group.error .error-text {
+	display: block;
+}
 .btn_submit {
 	width: 280px;
 	height: 60px;
@@ -599,6 +608,7 @@ a {
 .points__item.active {
 	border-right: 6px solid #2196f3;
 }
+.points__item.active .points__item-inner,
 .points__item-inner:hover {
 	box-shadow: 0 1px 12px rgba(0,0,0,.12);
 	cursor: pointer;
@@ -1209,6 +1219,13 @@ a {
 		margin: 0 auto 35px auto;
 	}
 	.points__list {
+		width: 100%;
+	}
+	.points__item.active,
+	.points__item {
+		border-right: none;
+	}
+	.points__item-inner {
 		width: 100%;
 	}
 	.point__img {

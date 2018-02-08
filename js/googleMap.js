@@ -218,22 +218,32 @@ function initMap() {
 		icon: 'img/mark.png'
 	});
 
+    var pointItems = $('#booking-desks-list').find('.points__item'); 
+
 
 	office1.addListener('click', function() {
 		map.setZoom(16);
 		map.setCenter(office1.getPosition());
+        pointItems.removeClass('active');
+        $('#booking-desk-1').addClass('active');
 	});
 	office2.addListener('click', function() {
 		map.setZoom(16);
 		map.setCenter(office2.getPosition());
+        pointItems.removeClass('active');
+        $('#booking-desk-2').addClass('active');
 	});
 	office3.addListener('click', function() {
 		map.setZoom(16);
 		map.setCenter(office3.getPosition());
+        pointItems.removeClass('active');
+        $('#booking-desk-3').addClass('active');
 	});
 	office4.addListener('click', function() {
 		map.setZoom(16);
 		map.setCenter(office4.getPosition());
+        pointItems.removeClass('active');
+        $('#booking-desk-4').addClass('active');
 	});
 
 
