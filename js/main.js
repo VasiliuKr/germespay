@@ -181,7 +181,7 @@ $(document).mouseup(function (e) {
 /*************** Modals (end) *****************/
 
 $(document).ready(function() {
-	$('#f-adrs-city').select2({
+	$('#f_adrs_city').select2({
 		placeholder: 'Город',
 		language: {
 			'noResults': function(){
@@ -189,29 +189,195 @@ $(document).ready(function() {
 			}
 		}
 	});
-	$('#f-adrs-street').select2({
+	$('#f_adrs_street').select2({
 		placeholder: 'Улица'
 	});
-	$('#f-adrs-house').select2({
+	$('#f_adrs_house').select2({
 		placeholder: 'Номер дома'
 	});
-	$('#f-adrs-type').select2({
+	$('#f_adrs_type').select2({
 		placeholder: 'Вид платежа'
 	});
-	$('#f-acnt-type').select2({
+	$('#f_acnt_type').select2({
 		placeholder: 'Вид платежа'
 	});
-	$('#f-acnt-object').select2({
+	$('#f_acnt_object').select2({
 		placeholder: 'Адрес объекта'
 	});
 });
 
 
+/* Validation (start)*/
+
+var formAdrs = $('#paymentByAddress');
+var formButtonAdrs = formAdrs.find(".btn_submit");
+var formValidAdrs = false,
+	emailValidAdrs = false,
+	cityValidAdrs = false,
+	streetValidAdrs = false,
+	houseValidAdrs = false,
+	flatValidAdrs = false,
+	typeValidAdrs = false,
+	amountValidAdrs = false;
+$('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_city, select#f_adrs_street, select#f_adrs_house, select#f_adrs_type').unbind().change(function() {
+	var id = $(this).attr('id');
+	var val = $(this).val();
+	var fieldWrap = $(this).parents('.payment-form__field-group');
+
+	switch(id) {
+		case 'f_adrs_email':
+			var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+			if(val != '' && val.match(rv_email)) {
+				fieldWrap.removeClass('error');
+				emailValidAdrs = true;
+			} else {
+				fieldWrap.addClass('error');
+				emailValidAdrs = false;
+			}
+		break;
+
+		case 'f_adrs_city': 
+			if(val != '') {
+				fieldWrap.removeClass('error');
+				cityValidAdrs = true;
+			}
+		break;
+
+		case 'f_adrs_street': 
+			if(val != '') {
+				fieldWrap.removeClass('error');
+				streetValidAdrs = true;
+			}
+		break;
+
+		case 'f_adrs_house': 
+			if(val != '') {
+				fieldWrap.removeClass('error');
+				houseValidAdrs = true;
+			}
+		break;
+		
+		case 'f_adrs_flat':
+			if(val != '') {
+				fieldWrap.removeClass('error');
+				flatValidAdrs = true;
+			} else {
+				fieldWrap.addClass('error');
+				flatValidAdrs = false;
+			}
+		break;
+
+		case 'f_adrs_type': 
+			if(val != '') {
+				fieldWrap.removeClass('error');
+				typeValidAdrs = true;
+			}
+		break;
+
+		case 'f_adrs_amount':
+			var formSelectsAdrs = $('#f_adrs_city, #f_adrs_street, #f_adrs_house, #f_adrs_type');
+				formSelectsAdrs.each(function(index, el) {
+					if($(this).val().length == false) {
+						$(this).parents('.payment-form__field-group').addClass('error');
+					}
+				});
+			var rv_amount = /[\d]+/;
+			if(val != '' && val.match(rv_amount)) {
+				fieldWrap.removeClass('error');
+				amountValidAdrs = true;
+			} else {
+				fieldWrap.addClass('error');
+				amountValidAdrs = false;
+			}
+		break;
+	}
+	if(emailValidAdrs && cityValidAdrs && streetValidAdrs && houseValidAdrs && flatValidAdrs && typeValidAdrs && amountValidAdrs) {
+		formValidAdrs = true;
+	} else {
+		formValidAdrs = false;
+	}
+	if (formValidAdrs) {
+		formButtonAdrs.prop('disabled', false);
+	}
+});
 
 
-// $('.points__item-inner').hover(function() {
-// 	$(this).parent('.points__item').addClass('active')
-// }, function() {
-// 	$(this).parent('.points__item').removeClass('active')
-// });
+var formAcnt = $('#paymentByAccount');
+var formButtonAcnt = formAcnt.find(".btn_submit");
+var formValidAcnt = false,
+	emailValidAcnt = false,
+	accountValidAcnt = false,
+	typeValidAcnt = false,
+	objectValidAcnt = false,
+	amountValidAcnt = false;
+$('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_acnt_type, select#f_acnt_object').unbind().change(function() {
+	var id = $(this).attr('id');
+	var val = $(this).val();
+	var fieldWrap = $(this).parents('.payment-form__field-group');
+
+	switch(id) {
+		case 'f_acnt_email':
+			var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+			if(val != '' && val.match(rv_email)) {
+				fieldWrap.removeClass('error');
+				emailValidAcnt = true;
+			} else {
+				fieldWrap.addClass('error');
+				emailValidAcnt = false;
+			}
+		break;
+
+		case 'f_acnt_account_num': 
+			var rv_account = /[\d]+/;
+			if(val != '' && val.match(rv_account)) {
+				fieldWrap.removeClass('error');
+				accountValidAcnt = true;
+			} else {
+				fieldWrap.addClass('error');
+				accountValidAcnt = false;
+			}
+		break;
+
+		case 'f_acnt_type': 
+			if(val != '') {
+				fieldWrap.removeClass('error');
+				typeValidAcnt = true;
+			}
+		break;
+
+		case 'f_acnt_object': 
+			if(val != '') {
+				fieldWrap.removeClass('error');
+				objectValidAcnt = true;
+			}
+		break;
+
+		case 'f_acnt_amount':
+			var formSelectsAcnt = $('#f_acnt_object, #f_acnt_type');
+				formSelectsAcnt.each(function(index, el) {
+					if($(this).val().length == false) {
+						$(this).parents('.payment-form__field-group').addClass('error');
+					}
+				});
+			var rv_amount = /[\d]+/;
+			if(val != '' && val.match(rv_amount)) {
+				fieldWrap.removeClass('error');
+				amountValidAcnt = true;
+			} else {
+				fieldWrap.addClass('error');
+				amountValidAcnt = false;
+			}
+		break;
+	}
+	if(emailValidAcnt && accountValidAcnt && typeValidAcnt && objectValidAcnt && amountValidAcnt) {
+		formValidAcnt = true;
+	} else {
+		formValidAcnt = false;
+	}
+	if (formValidAcnt) {
+		formButtonAcnt.prop('disabled', false);
+	}
+});
+
+/* Validation (end)*/
 

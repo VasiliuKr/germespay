@@ -1562,6 +1562,10 @@ a {
 		background-position: top;
 		padding-top: 0;
 	}
+	.header.header_404 .header__link,
+	.header.header_404 .header__nav.mobile .header__phone {
+		color: #fff;
+	}
 }
 
 @media only screen and (max-width: 480px) {
