@@ -33,52 +33,31 @@ $(document).on('blur', '.payment-form__input', function() {
 
 
 /*********************** Styled select (start) **********************/
-/*$('select').each(function(){
-	var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-	$this.addClass('select-hidden'); 
-	$this.wrap('<div class="select"></div>');
-	$this.after('<div class="select-styled"></div>');
-
-	var $styledSelect = $this.next('div.select-styled');
-	$styledSelect.text($this.children('option').eq(0).text());
-
-	var $list = $('<ul />', {
-		'class': 'select-options'
-	}).insertAfter($styledSelect);
-
-	for (var i = 0; i < numberOfOptions; i++) {
-		$('<li />', {
-			text: $this.children('option').eq(i).text(),
-			rel: $this.children('option').eq(i).val()
-		}).appendTo($list);
-	}
-
-	var $listItems = $list.children('li');
-
-	$styledSelect.click(function(e) {
-		e.stopPropagation();
-		$('div.select-styled.active').not(this).each(function(){
-			$(this).removeClass('active').next('ul.select-options').hide();
-		});
-		$(this).toggleClass('active').next('ul.select-options').toggle();
+$(document).ready(function() {
+	$('#f_adrs_city').select2({
+		placeholder: 'Город',
+		language: {
+			'noResults': function(){
+				return 'Нет совпадений';
+			}
+		}
 	});
-
-	$listItems.click(function(e) {
-		e.stopPropagation();
-		$styledSelect.text($(this).text()).removeClass('active');
-		$styledSelect.text($(this).text()).addClass('selected');
-		$this.val($(this).attr('rel'));
-		$list.hide();
-		// console.log($this.val());
+	$('#f_adrs_street').select2({
+		placeholder: 'Улица'
 	});
-
-	$(document).click(function() {
-		$styledSelect.removeClass('active');
-		$list.hide();
+	$('#f_adrs_house').select2({
+		placeholder: 'Номер дома'
 	});
-
-});*/
+	$('#f_adrs_type').select2({
+		placeholder: 'Вид платежа'
+	});
+	$('#f_acnt_type').select2({
+		placeholder: 'Вид платежа'
+	});
+	$('#f_acnt_object').select2({
+		placeholder: 'Адрес объекта'
+	});
+});
 /*********************** Styled select (end) **********************/
 
 /***************** Changing form content (start) ******************/
@@ -135,7 +114,6 @@ $(document).on('click', '.header__link', function(event) {
 	}
 	
 });
-
 /***************** Menu mobile (end) ******************/
 
 /************* Modals (start) ***************/
@@ -170,45 +148,17 @@ $(document).on('click', '#privacy-agreement', function(event) {
 	
 });
 
-$(document).mouseup(function (e) {
+$(document).on('mousedown touchstart', function (e) {
+	// e.preventDefault();
 	var container = $(".modal-overlay");
 	if (container.has(e.target).length === 0){
 		container.hide();
 		closeModal();
 	}
 });
-
 /*************** Modals (end) *****************/
 
-$(document).ready(function() {
-	$('#f_adrs_city').select2({
-		placeholder: 'Город',
-		language: {
-			'noResults': function(){
-				return 'Нет совпадений';
-			}
-		}
-	});
-	$('#f_adrs_street').select2({
-		placeholder: 'Улица'
-	});
-	$('#f_adrs_house').select2({
-		placeholder: 'Номер дома'
-	});
-	$('#f_adrs_type').select2({
-		placeholder: 'Вид платежа'
-	});
-	$('#f_acnt_type').select2({
-		placeholder: 'Вид платежа'
-	});
-	$('#f_acnt_object').select2({
-		placeholder: 'Адрес объекта'
-	});
-});
-
-
-/* Validation (start)*/
-
+/**************** Validation (start)*******************/
 var formAdrs = $('#paymentByAddress');
 var formButtonAdrs = formAdrs.find(".btn_submit");
 var formValidAdrs = false,
@@ -281,7 +231,7 @@ $('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_cit
 						$(this).parents('.payment-form__field-group').addClass('error');
 					}
 				});
-			var rv_amount = /[\d]+/;
+			var rv_amount = /^\d+$/;
 			if(val != '' && val.match(rv_amount)) {
 				fieldWrap.removeClass('error');
 				amountValidAdrs = true;
@@ -328,7 +278,7 @@ $('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_a
 		break;
 
 		case 'f_acnt_account_num': 
-			var rv_account = /[\d]+/;
+			var rv_account = /^\d+$/;
 			if(val != '' && val.match(rv_account)) {
 				fieldWrap.removeClass('error');
 				accountValidAcnt = true;
@@ -359,7 +309,7 @@ $('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_a
 						$(this).parents('.payment-form__field-group').addClass('error');
 					}
 				});
-			var rv_amount = /[\d]+/;
+			var rv_amount = /^\d+$/;
 			if(val != '' && val.match(rv_amount)) {
 				fieldWrap.removeClass('error');
 				amountValidAcnt = true;
@@ -378,6 +328,5 @@ $('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_a
 		formButtonAcnt.prop('disabled', false);
 	}
 });
-
-/* Validation (end)*/
+/*************** Validation (end)********************/
 
