@@ -148,8 +148,9 @@ $(document).on('click', '#privacy-agreement', function(event) {
 	
 });
 
-$(document).on('mousedown touchstart', function (e) {
-	// e.preventDefault();
+// закрытие модалки по внешней области
+// touchstart добавлен для корректной работы на iOS
+$(document).on('mouseup touchstart', function (e) {
 	var container = $(".modal-overlay");
 	if (container.has(e.target).length === 0){
 		container.hide();
