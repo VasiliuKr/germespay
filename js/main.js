@@ -338,10 +338,15 @@ $('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_a
 	}
 });
 
-$('#f_acnt_account_num, #f_acnt_amount, #f_adrs_amount').on('keydown', function(e){
-  if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
-    return false;
-  };
-})
+$('#f_acnt_amount, #f_adrs_amount').on('keydown', function(e){
+	if(e.key.length == 1 && e.key.match(/[^0-9'".,]/)){
+		return false;
+	};
+});
+$('#f_acnt_account_num').on('keydown', function(e){
+	if(e.key.length == 1 && e.key.match(/[^0-9'"]/)){
+		return false;
+	};
+});
 /*************** Validation (end)********************/
 
