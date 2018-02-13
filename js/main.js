@@ -9,12 +9,13 @@ $(window).scroll(function() {
 	};
 });
 
-$('.scroll').on('click', function(e){
-	e.preventDefault()
-	$('html, body').animate({
-		scrollTop : $(this.hash).offset().top
-	}, 1500);
-});
+// $('.scroll').on('click', function(e){
+// 	e.preventDefault()
+// 	$('html, body').animate({
+// 		scrollTop : $(this.hash).offset().top
+// 	}, 1500);
+// });
+
 /********************* Fixed header (end) *********************/
 
 
@@ -240,7 +241,7 @@ $('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_cit
 						$(this).parents('.payment-form__field-group').addClass('error');
 					}
 				});
-			var rv_amount = /^\d+$/;
+			var rv_amount = /^[.,0-9]+$/;
 			if(val != '' && val.match(rv_amount)) {
 				fieldWrap.removeClass('error');
 				amountValidAdrs = true;
@@ -318,7 +319,7 @@ $('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_a
 						$(this).parents('.payment-form__field-group').addClass('error');
 					}
 				});
-			var rv_amount = /^\d+$/;
+			var rv_amount = /^[.,0-9]+$/;
 			if(val != '' && val.match(rv_amount)) {
 				fieldWrap.removeClass('error');
 				amountValidAcnt = true;

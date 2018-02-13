@@ -13,8 +13,6 @@ https://select2.org/dropdown  plugin for input with dropdown select
 
 **TODO**
 
-Регулярка на проверку суммы платежа (добавить возможность точки и запятой)
-
 Стилизация письма (кружочки)
 
 Стилизация select2
