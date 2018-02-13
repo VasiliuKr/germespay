@@ -55,7 +55,7 @@ $(document).ready(function() {
 		placeholder: 'Вид платежа'
 	});
 	$('#f_acnt_object').select2({
-		placeholder: 'Адрес объекта'
+		placeholder: 'Адрес объекта',
 	});
 });
 /*********************** Styled select (end) **********************/
@@ -111,9 +111,17 @@ $(document).on('click', '.header__link', function(event) {
 		$('body').toggleClass('stop-scroll');
 		navMenu.toggleClass('mobile');
 		menuButton.toggleClass('active');
+	} else {
+		if (target == '#sect-2') {
+			target = '.features__item.section-title';
+			$('html, body').animate({scrollTop: $(target).offset().top - 100 }, 500);
+		} else {
+			$('html, body').animate({scrollTop: $(target).offset().top - 50 }, 500);
+		}
 	}
 	
 });
+
 /***************** Menu mobile (end) ******************/
 
 /************* Modals (start) ***************/

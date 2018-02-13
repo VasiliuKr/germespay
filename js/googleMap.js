@@ -191,7 +191,7 @@ function initMap() {
 		// scrollwheel: false,
 		zoom: 13,
 		styles: styleArray,
-		disableDefaultUI: true
+		disableDefaultUI: false
 	});
 	// Create marker
 	var office1 = new google.maps.Marker({
