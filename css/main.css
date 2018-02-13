@@ -397,7 +397,7 @@ a {
 	background-color: #fff;
 	background-image: linear-gradient(to bottom, #2196f3, #1179cb);
 }
-.btn_submit:hover {
+.btn_submit:not([disabled]):hover {
 	background-image: linear-gradient(to top, #2196f3, #1179cb);
 }
 .btn_submit[disabled] {
