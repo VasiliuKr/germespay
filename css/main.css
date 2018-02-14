@@ -758,6 +758,7 @@ a {
 }
 .pmnt__pic {
 	vertical-align: middle;
+	max-width: 100%;
 }
 .text-apply {
 	color: #fff;
@@ -966,7 +967,9 @@ a {
 	background-image: linear-gradient(to bottom, #2196f3, #1179cb);
 	margin: 0 auto;
 }
-
+.error404__btn:hover {
+	background-image: linear-gradient(to top, #2196f3, #1179cb);
+}
 
 
 
@@ -1448,7 +1451,7 @@ a {
 	.payment-modal {
 		top: 420px;
 		width: 100%;
-		background: none;
+		/*background: none;*/
 		padding: 38px 15px 8% 15px;
 		border-radius: 0;
 		left: 0;
@@ -1674,11 +1677,6 @@ a {
 	}
 }
 
-@media only screen and (max-width: 360px) {
-	.pmnt__pic {
-		width: 100%;
-	}
-}
 @media only screen and (max-width: 340px) {
 	#sect-2 {
 		padding-top: 940px;

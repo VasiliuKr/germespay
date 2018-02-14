@@ -12,9 +12,3 @@ https://codepen.io/wallaceerick/pen/ctsCz styled select
 https://select2.org/dropdown  plugin for input with dropdown select
 
 **TODO**
-
-Стилизация письма (кружочки)
-
-Стилизация select2
-
-Ширина mastercard в адаптиве
