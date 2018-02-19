@@ -126,7 +126,7 @@ $(document).on('click', '.header__link', function(event) {
 /***************** Menu mobile (end) ******************/
 
 /************* Modals (start) ***************/
-var scrollBarWidth = window.innerWidth - document.body.offsetWidth;
+var scrollBarWidth = window.innerWidth - $('body').width();
 function openModal() {
 	$('html').css('margin-right', scrollBarWidth);
 	$('.header__phone').css('margin-right', '8px');
@@ -179,11 +179,9 @@ var formValidAdrs = false,
 	flatValidAdrs = false,
 	typeValidAdrs = false,
 	amountValidAdrs = false;
-$('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_city, select#f_adrs_street, select#f_adrs_house, select#f_adrs_type').unbind().change(function() {
-	var id = $(this).attr('id');
-	var val = $(this).val();
-	var fieldWrap = $(this).parents('.payment-form__field-group');
 
+function validateAdddressPayForm(id, val, fieldWrap) {
+	
 	switch(id) {
 		case 'f_adrs_email':
 			var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
@@ -201,6 +199,7 @@ $('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_cit
 				fieldWrap.removeClass('error');
 				cityValidAdrs = true;
 			}
+			$('#f_adrs_street').prop('disabled', !cityValidAdrs);
 		break;
 
 		case 'f_adrs_street': 
@@ -208,6 +207,7 @@ $('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_cit
 				fieldWrap.removeClass('error');
 				streetValidAdrs = true;
 			}
+			$('#f_adrs_house').prop('disabled', !streetValidAdrs);
 		break;
 
 		case 'f_adrs_house': 
@@ -249,6 +249,7 @@ $('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_cit
 				fieldWrap.addClass('error');
 				amountValidAdrs = false;
 			}
+			
 		break;
 	}
 	if(emailValidAdrs && cityValidAdrs && streetValidAdrs && houseValidAdrs && flatValidAdrs && typeValidAdrs && amountValidAdrs) {
@@ -256,10 +257,23 @@ $('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_cit
 	} else {
 		formValidAdrs = false;
 	}
-	if (formValidAdrs) {
-		formButtonAdrs.prop('disabled', false);
-	}
+	formButtonAdrs.prop('disabled', !formValidAdrs);
+}
+
+$('input#f_adrs_email, input#f_adrs_amount, input#f_adrs_flat, select#f_adrs_city, select#f_adrs_street, select#f_adrs_house, select#f_adrs_type').unbind().change(function() {
+	var id = $(this).attr('id');
+	var val = $(this).val();
+	var fieldWrap = $(this).parents('.payment-form__field-group');
+	validateAdddressPayForm(id, val, fieldWrap);
 });
+
+$('#f_adrs_amount').keyup(function() {
+	var id = $(this).attr('id');
+	var val = $(this).val();
+	var fieldWrap = $(this).parents('.payment-form__field-group');
+	validateAdddressPayForm(id, val, fieldWrap);
+});
+
 
 
 var formAcnt = $('#paymentByAccount');
@@ -270,11 +284,8 @@ var formValidAcnt = false,
 	typeValidAcnt = false,
 	objectValidAcnt = false,
 	amountValidAcnt = false;
-$('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_acnt_type, select#f_acnt_object').unbind().change(function() {
-	var id = $(this).attr('id');
-	var val = $(this).val();
-	var fieldWrap = $(this).parents('.payment-form__field-group');
 
+function validateAccountPayForm(id, val, fieldWrap) {
 	switch(id) {
 		case 'f_acnt_email':
 			var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
@@ -296,6 +307,7 @@ $('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_a
 				fieldWrap.addClass('error');
 				accountValidAcnt = false;
 			}
+			$('#f_acnt_object').prop('disabled', !accountValidAcnt);
 		break;
 
 		case 'f_acnt_type': 
@@ -334,10 +346,24 @@ $('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_a
 	} else {
 		formValidAcnt = false;
 	}
-	if (formValidAcnt) {
-		formButtonAcnt.prop('disabled', false);
-	}
+	formButtonAcnt.prop('disabled', !formValidAcnt);
+}
+
+$('input#f_acnt_email, input#f_acnt_account_num, input#f_acnt_amount, select#f_acnt_type, select#f_acnt_object').unbind().change(function() {
+	var id = $(this).attr('id');
+	var val = $(this).val();
+	var fieldWrap = $(this).parents('.payment-form__field-group');
+	validateAccountPayForm(id, val, fieldWrap);	
 });
+
+$('#f_acnt_amount').keyup(function() {
+	var id = $(this).attr('id');
+	var val = $(this).val();
+	var fieldWrap = $(this).parents('.payment-form__field-group');
+	validateAccountPayForm(id, val, fieldWrap);
+});
+
+
 
 $('#f_acnt_amount, #f_adrs_amount').on('keydown', function(e){
 	if(e.key.length == 1 && e.key.match(/[^0-9'".,]/)){
